@@ -73,6 +73,15 @@ cat ollama.log
 
 # run model
 ollama run deepseek-r1:32b
+
+#vll
+nohup python -m vllm.entrypoints.openai.api_server \
+  --model casperhansen/deepseek-r1-distill-qwen-32b-awq \
+  --quantization awq \
+  --port 8000 \
+  --host 127.0.0.1 \
+  --max-model-len 8192 \
+  --trust-remote-code > vllm.log 2>&1 &
 ```
 
 ### 2. Installation
