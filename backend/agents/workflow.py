@@ -135,3 +135,32 @@ def run_bioreason_pipeline(mutation_query: str) -> Dict[str, Any]:
     update_knowledge_graph_with_results(final_state)
     
     return final_state
+
+
+def stream_bioreason_pipeline(mutation_query: str):
+    """Streams the compiled LangGraph workflow pipeline, yielding (node_name, state)."""
+    logger.info(f"Streaming BioReason-X pipeline for mutation: '{mutation_query}'")
+    
+    workflow = build_bioreason_workflow()
+    
+    state = {
+        "mutation_input": mutation_query,
+        "mutation_details": {},
+        "protein_impact": "",
+        "pathway_reasoning": {},
+        "literature_evidence": [],
+        "therapies": [],
+        "validation": {},
+        "consensus": {},
+        "reasoning_trace": []
+    }
+    
+    for event in workflow.stream(state):
+        for node_name, updated_state in event.items():
+            yield node_name, updated_state
+            state = updated_state
+            
+    # Inject compiled nodes into graph database
+    update_knowledge_graph_with_results(state)
+    yield "complete", state
+

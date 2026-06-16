@@ -1,5 +1,5 @@
 import streamlit as st
-from backend.agents.workflow import run_bioreason_pipeline
+from backend.agents.workflow import run_bioreason_pipeline, stream_bioreason_pipeline
 from backend.utils.config import logger
 
 def render_home():
@@ -10,7 +10,7 @@ def render_home():
             <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 3.2rem; margin: 0; background: linear-gradient(135deg, #1A365D, #319795); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
                 BioReason-X
             </h1>
-            <p style="font-size: 1.25rem; font-weight: 400; color: #4A5568; margin-top: 10px;">
+            <p class="hero-subtitle">
                 Mutation &rarr; Mechanism &rarr; Therapy Intelligence Platform
             </p>
         </div>
@@ -19,38 +19,14 @@ def render_home():
     )
 
     # Grid columns
-    col1, col2 = st.columns([3, 2], gap="large")
+    col1, col2 = st.columns([2, 3], gap="large")
 
     with col1:
-        st.markdown("### 🧬 Platform Overview")
-        st.markdown(
-            """
-            BioReason-X is an enterprise-grade multi-agent clinical decision support engine. 
-            Unlike traditional keyword searches or standard RAG retrievers, BioReason-X utilizes a 
-            **LangGraph Multi-Agent Orchestrator** to analyze genomic variations, trace biological pathway cascades, 
-            retrieve validated literature, target potential therapies, and produce consolidated reports.
-            """
-        )
-
-        st.markdown("#### 🛠️ Analysis Core Steps")
-        steps = [
-            "**1. Mutation Interpretation**: Identifies mutation structure & pathogenicity.",
-            "**2. Gene & Protein Mapping**: Maps spatial domain disruptions & active kinase sites.",
-            "**3. Pathway Disruption Analysis**: Traces cellular signal cascade consequences.",
-            "**4. Literature RAG Matching**: Performs deep search against clinical registries & abstracts.",
-            "**5. Targeted Therapy Prescriptions**: Recommends FDA approved & off-label targeted drugs.",
-            "**6. Evidence Validation & Auditing**: Screens conclusions for inconsistencies & clinical proof.",
-            "**7. Consensus Synthesis**: Blends findings into a unified clinical brief."
-        ]
-        for step in steps:
-            st.markdown(step)
-
-    with col2:
         # Form box styled with glassmorphism border
         st.markdown(
             """
-            <div style="background-color: #F7FAFC; border: 1.5px solid #E2E8F0; border-radius: 12px; padding: 25px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0,0,0,0.02);">
-                <h4 style="margin-top: 0; font-family: 'Montserrat', sans-serif; color: #1A365D;">Analyze Genomic Variant</h4>
+            <div class="analysis-card">
+                <h4>Analyze Genomic Variant</h4>
             </div>
             """, 
             unsafe_allow_html=True
@@ -63,6 +39,9 @@ def render_home():
             placeholder="e.g. BRCA1 c.5266dupC",
             key="main_input"
         )
+        
+        # Placeholder for the status view
+        status_placeholder = st.empty()
         
         # Action button
         run_analysis = st.button("🚀 Analyze Mutation", use_container_width=True)
@@ -86,21 +65,65 @@ def render_home():
                 st.session_state["mutation_query"] = "BRAF V600E"
                 st.rerun()
 
+    with col2:
+        st.markdown("### 🧬 Platform Overview")
+        st.markdown(
+            """
+            BioReason-X is an enterprise-grade multi-agent clinical decision support engine. 
+            Unlike traditional keyword searches or standard RAG retrievers, BioReason-X utilizes a 
+            **LangGraph Multi-Agent Orchestrator** to analyze genomic variations, trace biological pathway cascades, 
+            retrieve validated literature, target potential therapies, and produce consolidated reports.
+            """
+        )
+
+        st.markdown("#### 🛠️ Analysis Core Steps")
+        steps = [
+            "**1. Mutation Interpretation**: Identifies mutation structure & pathogenicity.",
+            "**2. Gene & Protein Mapping**: Maps spatial domain disruptions & active kinase sites.",
+            "**3. Pathway Disruption Analysis**: Traces cellular signal cascade consequences.",
+            "**4. Literature RAG Matching**: Performs deep search against clinical registries & abstracts.",
+            "**5. Targeted Therapy Prescriptions**: Recommends FDA approved & off-label targeted drugs.",
+            "**6. Evidence Validation & Auditing**: Screens conclusions for inconsistencies & clinical proof.",
+            "**7. Consensus Synthesis**: Blends findings into a unified clinical brief."
+        ]
+        for step in steps:
+            st.markdown(step)
+
     # Trigger logic
     if run_analysis or (st.session_state.get("mutation_query") and "pipeline_results" not in st.session_state):
         query_to_run = mutation_input if run_analysis else st.session_state.get("mutation_query")
         
         if query_to_run:
-            with st.spinner("Executing Multi-Agent Clinical Analysis (LangGraph)..."):
+            with status_placeholder.status("Executing Multi-Agent Clinical Analysis (LangGraph)...", expanded=True) as status_bar:
                 try:
                     logger.info(f"Triggering analysis for {query_to_run} from Home view.")
-                    results = run_bioreason_pipeline(query_to_run)
-                    st.session_state["pipeline_results"] = results
-                    st.session_state["mutation_query"] = query_to_run
-                    st.success("Analysis complete!")
-                    st.session_state["active_page"] = "📊 Analysis Dashboard"
-                    st.rerun()
+                    
+                    agent_names = {
+                        "mutation_agent": "🧬 Interpreting Mutation Variant...",
+                        "gene_agent": "🔬 Mapping Gene & Protein Impact...",
+                        "pathway_agent": "🔄 Analyzing Pathway Disruption...",
+                        "literature_agent": "📚 Retrieving Literature Evidence (RAG)...",
+                        "therapy_agent": "💊 Formulating Targeted Therapy Guidelines...",
+                        "validation_agent": "🛡️ Verifying Consensus & Fact-Checking...",
+                        "consensus_agent": "📝 Synthesizing Clinical Decision Report..."
+                    }
+                    
+                    results = None
+                    for node_name, state in stream_bioreason_pipeline(query_to_run):
+                        if node_name in agent_names:
+                            st.write(agent_names[node_name])
+                        elif node_name == "complete":
+                            results = state
+                            
+                    if results:
+                        st.session_state["pipeline_results"] = results
+                        st.session_state["mutation_query"] = query_to_run
+                        status_bar.update(label="Analysis complete!", state="complete", expanded=False)
+                        st.success("Analysis complete!")
+                        st.session_state["active_page"] = "📊 Analysis Dashboard"
+                        st.rerun()
                 except Exception as e:
+                    status_bar.update(label="Analysis failed!", state="error", expanded=True)
                     st.error(f"Error executing analysis pipeline: {e}")
                     logger.exception(e)
         else:

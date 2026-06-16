@@ -40,24 +40,108 @@ def main():
 
             /* Custom styling for primary actions button */
             div.stButton > button:first-child {
-                background-color: #1A365D;
+                background-color: var(--primary-color, #1A365D);
                 color: #FFFFFF;
                 border-radius: 8px;
-                border: 1px solid #1A365D;
+                border: 1px solid var(--primary-color, #1A365D);
                 font-weight: 600;
                 transition: all 0.25s ease;
             }
             div.stButton > button:first-child:hover {
-                background-color: #2B6CB0;
-                border-color: #2B6CB0;
+                background-color: var(--primary-color, #2B6CB0);
+                border-color: var(--primary-color, #2B6CB0);
                 color: #FFFFFF;
                 box-shadow: 0 4px 10px rgba(43, 108, 176, 0.25);
+                opacity: 0.9;
             }
             
-            /* Sidebar customizations */
+            /* Sidebar customizations adapting to dark theme */
             [data-testid="stSidebar"] {
-                background-color: #F7FAFC;
-                border-right: 1px solid #E2E8F0;
+                background-color: var(--secondary-background-color);
+                border-right: 1px solid var(--border-color, #E2E8F0);
+            }
+
+            /* Sidebar Title */
+            .sidebar-title {
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1.5rem;
+                color: var(--text-color);
+                margin: 0;
+            }
+            
+            /* Home page styles */
+            .hero-subtitle {
+                font-size: 1.25rem;
+                font-weight: 400;
+                color: var(--text-color);
+                opacity: 0.8;
+                margin-top: 10px;
+            }
+            .analysis-card {
+                background-color: var(--secondary-background-color);
+                border: 1.5px solid var(--border-color, #E2E8F0);
+                border-radius: 12px;
+                padding: 25px;
+                margin-bottom: 20px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            }
+            .analysis-card h4 {
+                margin-top: 0;
+                font-family: 'Montserrat', sans-serif;
+                color: var(--text-color);
+            }
+
+            /* Evidence Explorer styles */
+            .evidence-card {
+                background-color: var(--secondary-background-color);
+                border: 1px solid var(--border-color, #E2E8F0);
+                border-radius: 8px;
+                padding: 20px;
+                margin-bottom: 20px;
+                box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+            }
+            .evidence-title {
+                margin: 10px 0;
+                font-size: 1.15rem;
+                font-family: 'Montserrat', sans-serif;
+                color: var(--text-color);
+            }
+            .evidence-abstract {
+                font-size: 0.95rem;
+                line-height: 1.5;
+                color: var(--text-color);
+                opacity: 0.8;
+                margin-top: 10px;
+                font-style: italic;
+            }
+            .evidence-meta {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-bottom: 10px;
+                flex-wrap: wrap;
+                gap: 8px;
+            }
+            .badge {
+                font-size: 0.85rem;
+                font-weight: 600;
+                padding: 4px 10px;
+                border-radius: 6px;
+            }
+            .badge-id {
+                font-weight: 700;
+                font-size: 0.95rem;
+                color: var(--primary-color);
+                background-color: rgba(43, 108, 176, 0.15);
+            }
+            .badge-source {
+                color: var(--text-color);
+                background-color: rgba(128, 128, 128, 0.15);
+            }
+            .badge-relevance {
+                font-weight: 700;
+                color: #319795;
+                background-color: rgba(49, 151, 149, 0.15);
             }
         </style>
         """,
@@ -68,21 +152,8 @@ def main():
     st.sidebar.markdown(
         """
         <div style="text-align: center; padding: 10px 0;">
-            <h2 style="font-family: 'Montserrat', sans-serif; font-size: 1.5rem; color: #1A365D; margin: 0;">🧬 BioReason-X</h2>
+            <h2 class="sidebar-title">🧬 BioReason-X</h2>
             <span style="font-size: 0.8rem; color: #718096; font-weight: 600;">v1.0.0 (Enterprise)</span>
-        </div>
-        """,
-        unsafe_allow_html=True
-    )
-
-    # Display environment statuses
-    is_live_api = has_gemini_credentials()
-    status_label = "Gemini Live API Mode" if is_live_api else "Clinical Simulation Mode"
-    status_color = "#319795" if is_live_api else "#DD6B20"
-    st.sidebar.markdown(
-        f"""
-        <div style="text-align: center; padding: 5px; margin: 10px 0; background-color: #EDF2F7; border-radius: 8px;">
-            <span style="font-size: 0.8rem; font-weight: 700; color: {status_color};">&bull; {status_label}</span>
         </div>
         """,
         unsafe_allow_html=True

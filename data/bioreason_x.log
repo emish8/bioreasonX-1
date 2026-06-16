@@ -305,3 +305,1300 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2026-06-16 03:57:31,436 [ERROR] BioReason-X: Error injecting results into knowledge graph: networkx.classes.digraph.DiGraph.add_node() got multiple values for keyword argument 'label'
 2026-06-16 03:57:46,117 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
 2026-06-16 03:57:46,119 [INFO] BioReason-X: Loaded cached NetworkX graph with 20 nodes.
+2026-06-16 15:31:02,919 [INFO] BioReason-X: Gemini API configured successfully.
+2026-06-16 15:31:42,513 [INFO] numexpr.utils: NumExpr defaulting to 4 threads.
+2026-06-16 15:31:52,470 [INFO] faiss.loader: Loading faiss with AVX2 support.
+2026-06-16 15:31:52,470 [INFO] faiss.loader: Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-06-16 15:31:52,471 [INFO] faiss.loader: Loading faiss.
+2026-06-16 15:31:52,533 [INFO] faiss.loader: Successfully loaded faiss.
+2026-06-16 15:58:03,528 [INFO] BioReason-X: Gemini API configured successfully.
+2026-06-16 15:58:33,600 [INFO] faiss.loader: Loading faiss with AVX2 support.
+2026-06-16 15:58:33,600 [INFO] faiss.loader: Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-06-16 15:58:33,601 [INFO] faiss.loader: Loading faiss.
+2026-06-16 15:58:33,686 [INFO] faiss.loader: Successfully loaded faiss.
+2026-06-16 15:59:42,405 [INFO] BioReason-X: Triggering analysis for BRCA1 c.5266dupC from Home view.
+2026-06-16 15:59:42,407 [INFO] BioReason-X: Triggering BioReason-X pipeline for mutation: 'BRCA1 c.5266dupC'
+2026-06-16 15:59:42,407 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 15:59:42,469 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'BRCA1 c.5266dupC'
+2026-06-16 15:59:42,469 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Mutation Analysis Agent' with: BRCA1 c.5266dupC
+2026-06-16 15:59:44,812 [INFO] BioReason-X: Running Gene & Protein Agent for: 'BRCA1' (frameshift duplication)
+2026-06-16 15:59:44,812 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Gene & Protein Agent' with: BRCA1 c.5266dupC
+2026-06-16 15:59:54,144 [INFO] BioReason-X: Triggering analysis for BRCA1 c.5266dupC from Home view.
+2026-06-16 15:59:54,149 [INFO] BioReason-X: Triggering BioReason-X pipeline for mutation: 'BRCA1 c.5266dupC'
+2026-06-16 15:59:54,165 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 15:59:54,216 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'BRCA1 c.5266dupC'
+2026-06-16 15:59:54,217 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Mutation Analysis Agent' with: BRCA1 c.5266dupC
+2026-06-16 15:59:56,205 [INFO] BioReason-X: Running Gene & Protein Agent for: 'BRCA1' (frameshift duplication)
+2026-06-16 15:59:56,206 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Gene & Protein Agent' with: BRCA1 c.5266dupC
+2026-06-16 15:59:59,514 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'BRCA1'
+2026-06-16 15:59:59,545 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Pathway Analysis Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:00:07,334 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'BRCA1'
+2026-06-16 16:00:07,334 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Pathway Analysis Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:00:09,099 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'BRCA1 c.5266dupC'
+2026-06-16 16:00:09,099 [INFO] BioReason-X: Initializing Literature Agent BiomedicalRetriever instance.
+2026-06-16 16:00:09,100 [INFO] BioReason-X: Loading HuggingFace Embedding Model: all-MiniLM-L6-v2
+2026-06-16 16:00:09,103 [INFO] sentence_transformers.base.model: No device provided, using cpu
+2026-06-16 16:00:09,908 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-06-16 16:00:10,142 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:10,143 [WARNING] huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-16 16:00:10,152 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:10,387 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:10,398 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:10,401 [INFO] sentence_transformers.base.model: Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-16 16:00:10,626 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:10,635 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:10,852 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:10,865 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-16 16:00:11,080 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:11,090 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:11,305 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:11,315 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:11,586 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:00:11,801 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:11,845 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:12,854 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:00:13,077 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:00:13,293 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:00:13,504 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:00:13,717 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:13,728 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:13,943 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:13,954 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:14,170 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:14,184 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:14,417 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:14,426 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:14,648 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-16 16:00:14,883 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-16 16:00:15,106 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:15,117 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt "HTTP/1.1 200 OK"
+2026-06-16 16:00:15,135 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt "HTTP/1.1 200 OK"
+2026-06-16 16:00:15,407 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:15,420 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:15,442 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:15,702 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:00:15,921 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:15,931 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:15,977 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:16,201 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-06-16 16:00:16,471 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:00:16,481 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:16,498 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-16 16:00:16,739 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-16 16:00:16,743 [INFO] BioReason-X: HuggingFace Model loaded. Embedding dimensions: 384
+2026-06-16 16:00:16,745 [INFO] BioReason-X: Loaded 12 source documents from C:\Users\Esha\Downloads\BioReason-X\BioReason-X\data\literature_db.json
+2026-06-16 16:00:16,745 [INFO] BioReason-X: Loading cached FAISS/Vector index...
+2026-06-16 16:00:16,749 [INFO] BioReason-X: Successfully loaded FAISS index.
+2026-06-16 16:00:16,749 [INFO] BioReason-X: Executing RAG retrieval for: 'BRCA1 c.5266dupC'
+2026-06-16 16:00:18,898 [INFO] BioReason-X: Executing RAG retrieval for: 'BRCA1 mutation clinical significance'
+2026-06-16 16:00:18,934 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 16:00:18,936 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'BRCA1'
+2026-06-16 16:00:18,936 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Therapy Recommendation Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:00:30,152 [INFO] BioReason-X: Running Evidence Validation Agent for: 'BRCA1' (BRCA1 c.5266dupC)
+2026-06-16 16:00:30,152 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Evidence Validation Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:00:47,058 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'BRCA1' (BRCA1 c.5266dupC)
+2026-06-16 16:00:47,058 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Consensus Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:00:54,556 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 16:00:54,558 [WARNING] BioReason-X: Neo4j connection failed: No module named 'neo4j'. Falling back to NetworkX.
+2026-06-16 16:00:54,558 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 16:00:54,560 [INFO] BioReason-X: Loaded cached NetworkX graph with 20 nodes.
+2026-06-16 16:00:54,567 [INFO] BioReason-X: Saved NetworkX graph to cache.
+2026-06-16 16:00:54,568 [INFO] BioReason-X: Knowledge Graph injection completed.
+2026-06-16 16:01:34,168 [INFO] BioReason-X: Triggering analysis for BRCA1 c.5266dupC from Home view.
+2026-06-16 16:01:34,169 [INFO] BioReason-X: Triggering BioReason-X pipeline for mutation: 'BRCA1 c.5266dupC'
+2026-06-16 16:01:34,169 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 16:01:34,236 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'BRCA1 c.5266dupC'
+2026-06-16 16:01:34,241 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Mutation Analysis Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:01:34,407 [INFO] BioReason-X: Triggering analysis for EGFR L858R from Home view.
+2026-06-16 16:01:34,408 [INFO] BioReason-X: Triggering BioReason-X pipeline for mutation: 'EGFR L858R'
+2026-06-16 16:01:34,408 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 16:01:34,458 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'EGFR L858R'
+2026-06-16 16:01:34,458 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Mutation Analysis Agent' with: EGFR L858R
+2026-06-16 16:01:36,557 [INFO] BioReason-X: Running Gene & Protein Agent for: 'EGFR' (missense)
+2026-06-16 16:01:36,557 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Gene & Protein Agent' with: EGFR L858R
+2026-06-16 16:01:37,015 [INFO] BioReason-X: Running Gene & Protein Agent for: 'BRCA1' (frameshift duplication)
+2026-06-16 16:01:37,015 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Gene & Protein Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:01:46,013 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'EGFR'
+2026-06-16 16:01:46,013 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Pathway Analysis Agent' with: EGFR L858R
+2026-06-16 16:01:50,096 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'EGFR L858R'
+2026-06-16 16:01:50,098 [INFO] BioReason-X: Executing RAG retrieval for: 'EGFR L858R'
+2026-06-16 16:01:50,175 [INFO] BioReason-X: Executing RAG retrieval for: 'EGFR mutation clinical significance'
+2026-06-16 16:01:50,201 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 16:01:50,202 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'EGFR'
+2026-06-16 16:01:50,203 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Therapy Recommendation Agent' with: EGFR L858R
+2026-06-16 16:01:51,258 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'BRCA1'
+2026-06-16 16:01:51,260 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Pathway Analysis Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:02:00,449 [INFO] BioReason-X: Running Evidence Validation Agent for: 'EGFR' (EGFR L858R)
+2026-06-16 16:02:00,450 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Evidence Validation Agent' with: EGFR L858R
+2026-06-16 16:02:01,158 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'BRCA1 c.5266dupC'
+2026-06-16 16:02:01,158 [INFO] BioReason-X: Executing RAG retrieval for: 'BRCA1 c.5266dupC'
+2026-06-16 16:02:01,183 [INFO] BioReason-X: Executing RAG retrieval for: 'BRCA1 mutation clinical significance'
+2026-06-16 16:02:01,211 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 16:02:01,212 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'BRCA1'
+2026-06-16 16:02:01,213 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Therapy Recommendation Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:02:09,131 [INFO] BioReason-X: Running Evidence Validation Agent for: 'BRCA1' (BRCA1 c.5266dupC)
+2026-06-16 16:02:09,132 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Evidence Validation Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:02:17,274 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'EGFR' (EGFR L858R)
+2026-06-16 16:02:17,274 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Consensus Agent' with: EGFR L858R
+2026-06-16 16:02:17,455 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 42.576501542s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 42
+}
+]
+2026-06-16 16:02:17,455 [WARNING] BioReason-X: Live Gemini API failed for 'Consensus Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 42.576501542s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 42
+}
+]
+2026-06-16 16:02:17,456 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 16:02:17,457 [WARNING] BioReason-X: Neo4j connection failed: No module named 'neo4j'. Falling back to NetworkX.
+2026-06-16 16:02:17,458 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 16:02:17,459 [INFO] BioReason-X: Loaded cached NetworkX graph with 23 nodes.
+2026-06-16 16:02:17,461 [INFO] BioReason-X: Saved NetworkX graph to cache.
+2026-06-16 16:02:17,462 [INFO] BioReason-X: Knowledge Graph injection completed.
+2026-06-16 16:02:23,956 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'BRCA1 c.5266dupC'
+2026-06-16 16:02:23,956 [INFO] BioReason-X: Executing RAG retrieval for: 'BRCA1 c.5266dupC'
+2026-06-16 16:02:23,991 [INFO] BioReason-X: Executing RAG retrieval for: 'BRCA1 mutation clinical significance'
+2026-06-16 16:02:24,029 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 16:02:24,031 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'BRCA1'
+2026-06-16 16:02:24,032 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Therapy Recommendation Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:02:26,882 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'BRCA1' (BRCA1 c.5266dupC)
+2026-06-16 16:02:26,882 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Consensus Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:02:27,066 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 32.966585793s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 32
+}
+]
+2026-06-16 16:02:27,067 [WARNING] BioReason-X: Live Gemini API failed for 'Consensus Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 32.966585793s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 32
+}
+]
+2026-06-16 16:02:27,068 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 16:02:27,069 [WARNING] BioReason-X: Neo4j connection failed: No module named 'neo4j'. Falling back to NetworkX.
+2026-06-16 16:02:27,070 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 16:02:27,071 [INFO] BioReason-X: Loaded cached NetworkX graph with 26 nodes.
+2026-06-16 16:02:27,076 [INFO] BioReason-X: Saved NetworkX graph to cache.
+2026-06-16 16:02:27,077 [INFO] BioReason-X: Knowledge Graph injection completed.
+2026-06-16 16:02:37,241 [INFO] BioReason-X: Running Evidence Validation Agent for: 'BRCA1' (BRCA1 c.5266dupC)
+2026-06-16 16:02:37,241 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Evidence Validation Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:02:37,429 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 22.602851475s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 22
+}
+]
+2026-06-16 16:02:37,429 [WARNING] BioReason-X: Live Gemini API failed for 'Evidence Validation Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 22.602851475s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 22
+}
+]
+2026-06-16 16:02:37,430 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'BRCA1' (BRCA1 c.5266dupC)
+2026-06-16 16:02:37,431 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Consensus Agent' with: BRCA1 c.5266dupC
+2026-06-16 16:02:37,732 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 22.29907343s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 22
+}
+]
+2026-06-16 16:02:37,732 [WARNING] BioReason-X: Live Gemini API failed for 'Consensus Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 5, model: gemini-2.5-flash
+Please retry in 22.29907343s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 5
+}
+, retry_delay {
+  seconds: 22
+}
+]
+2026-06-16 16:02:37,733 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 16:02:37,734 [WARNING] BioReason-X: Neo4j connection failed: No module named 'neo4j'. Falling back to NetworkX.
+2026-06-16 16:02:37,734 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 16:02:37,735 [INFO] BioReason-X: Loaded cached NetworkX graph with 27 nodes.
+2026-06-16 16:02:37,738 [INFO] BioReason-X: Saved NetworkX graph to cache.
+2026-06-16 16:02:37,739 [INFO] BioReason-X: Knowledge Graph injection completed.
+2026-06-16 16:04:09,880 [WARNING] BioReason-X: Neo4j connection failed: No module named 'neo4j'. Falling back to NetworkX.
+2026-06-16 16:04:09,880 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 16:04:09,882 [INFO] BioReason-X: Loaded cached NetworkX graph with 27 nodes.
+2026-06-16 16:04:23,067 [WARNING] BioReason-X: Neo4j connection failed: No module named 'neo4j'. Falling back to NetworkX.
+2026-06-16 16:04:23,069 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 16:04:23,071 [INFO] BioReason-X: Loaded cached NetworkX graph with 27 nodes.
+2026-06-16 16:04:24,993 [INFO] BioReason-X: Initializing PDF generation.
+2026-06-16 16:04:25,092 [INFO] BioReason-X: PDF generation completed.
+2026-06-16 16:04:25,099 [INFO] BioReason-X: Initializing DOCX generation.
+2026-06-16 16:04:25,283 [INFO] BioReason-X: DOCX generation completed.
+2026-06-16 16:04:42,286 [INFO] BioReason-X: Initializing PDF generation.
+2026-06-16 16:04:42,483 [INFO] BioReason-X: PDF generation completed.
+2026-06-16 16:04:42,491 [INFO] BioReason-X: Initializing DOCX generation.
+2026-06-16 16:04:42,592 [INFO] BioReason-X: DOCX generation completed.
+2026-06-16 16:05:03,744 [WARNING] BioReason-X: Neo4j connection failed: No module named 'neo4j'. Falling back to NetworkX.
+2026-06-16 16:05:03,744 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 16:05:03,745 [INFO] BioReason-X: Loaded cached NetworkX graph with 27 nodes.
+2026-06-16 16:05:45,120 [WARNING] BioReason-X: Neo4j connection failed: No module named 'neo4j'. Falling back to NetworkX.
+2026-06-16 16:05:45,120 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 16:05:45,121 [INFO] BioReason-X: Loaded cached NetworkX graph with 27 nodes.
+2026-06-16 16:05:48,333 [INFO] BioReason-X: Initializing PDF generation.
+2026-06-16 16:05:48,390 [INFO] BioReason-X: PDF generation completed.
+2026-06-16 16:05:48,394 [INFO] BioReason-X: Initializing DOCX generation.
+2026-06-16 16:05:48,517 [INFO] BioReason-X: DOCX generation completed.
+2026-06-16 16:06:39,385 [ERROR] asyncio: Exception in callback _ProactorBasePipeTransport._call_connection_lost()
+handle: <Handle _ProactorBasePipeTransport._call_connection_lost()>
+Traceback (most recent call last):
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\asyncio\events.py", line 89, in _run
+    self._context.run(self._callback, *self._args)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\WindowsApps\PythonSoftwareFoundation.Python.3.13_3.13.3824.0_x64__qbz5n2kfra8p0\Lib\asyncio\proactor_events.py", line 165, in _call_connection_lost
+    self._sock.shutdown(socket.SHUT_RDWR)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+ConnectionResetError: [WinError 10054] An existing connection was forcibly closed by the remote host
+2026-06-16 16:10:38,561 [INFO] BioReason-X: Clearing active pipeline analysis session.
+2026-06-16 16:12:47,062 [INFO] BioReason-X: Triggering analysis for IDH1 R132H from Home view.
+2026-06-16 16:12:47,063 [INFO] BioReason-X: Triggering BioReason-X pipeline for mutation: 'IDH1 R132H'
+2026-06-16 16:12:47,063 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 16:12:47,101 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'IDH1 R132H'
+2026-06-16 16:12:47,103 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Mutation Analysis Agent' with: IDH1 R132H
+2026-06-16 16:12:49,753 [INFO] BioReason-X: Running Gene & Protein Agent for: 'IDH1' (missense)
+2026-06-16 16:12:49,754 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Gene & Protein Agent' with: IDH1 R132H
+2026-06-16 16:13:00,270 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'IDH1'
+2026-06-16 16:13:00,271 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Pathway Analysis Agent' with: IDH1 R132H
+2026-06-16 16:13:00,459 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 59.571914093s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 59
+}
+]
+2026-06-16 16:13:00,459 [WARNING] BioReason-X: Live Gemini API failed for 'Pathway Analysis Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 59.571914093s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 59
+}
+]
+2026-06-16 16:13:00,461 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'IDH1 R132H'
+2026-06-16 16:13:00,461 [INFO] BioReason-X: Executing RAG retrieval for: 'IDH1 R132H'
+2026-06-16 16:13:00,499 [INFO] BioReason-X: Executing RAG retrieval for: 'IDH1 mutation clinical significance'
+2026-06-16 16:13:00,523 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 16:13:00,524 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'IDH1'
+2026-06-16 16:13:00,524 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Therapy Recommendation Agent' with: IDH1 R132H
+2026-06-16 16:13:00,750 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 59.280854572s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 59
+}
+]
+2026-06-16 16:13:00,750 [WARNING] BioReason-X: Live Gemini API failed for 'Therapy Recommendation Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 59.280854572s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 59
+}
+]
+2026-06-16 16:13:00,751 [INFO] BioReason-X: Running Evidence Validation Agent for: 'IDH1' (IDH1 R132H)
+2026-06-16 16:13:00,752 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Evidence Validation Agent' with: IDH1 R132H
+2026-06-16 16:13:01,001 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 59.029075116s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 59
+}
+]
+2026-06-16 16:13:01,001 [WARNING] BioReason-X: Live Gemini API failed for 'Evidence Validation Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 59.029075116s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 59
+}
+]
+2026-06-16 16:13:01,002 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'IDH1' (IDH1 R132H)
+2026-06-16 16:13:01,002 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Consensus Agent' with: IDH1 R132H
+2026-06-16 16:13:01,223 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 58.806278062s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 58
+}
+]
+2026-06-16 16:13:01,224 [WARNING] BioReason-X: Live Gemini API failed for 'Consensus Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 58.806278062s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 58
+}
+]
+2026-06-16 16:13:01,225 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 16:13:01,226 [WARNING] BioReason-X: Neo4j connection failed: No module named 'neo4j'. Falling back to NetworkX.
+2026-06-16 16:13:01,226 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 16:13:01,228 [INFO] BioReason-X: Loaded cached NetworkX graph with 27 nodes.
+2026-06-16 16:13:01,231 [INFO] BioReason-X: Saved NetworkX graph to cache.
+2026-06-16 16:13:01,231 [INFO] BioReason-X: Knowledge Graph injection completed.
+2026-06-16 16:13:59,351 [WARNING] BioReason-X: Neo4j connection failed: No module named 'neo4j'. Falling back to NetworkX.
+2026-06-16 16:13:59,352 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 16:13:59,355 [INFO] BioReason-X: Loaded cached NetworkX graph with 34 nodes.
+2026-06-16 16:29:46,718 [INFO] BioReason-X: Gemini API configured successfully.
+2026-06-16 16:29:58,954 [INFO] faiss.loader: Loading faiss with AVX2 support.
+2026-06-16 16:29:58,954 [INFO] faiss.loader: Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-06-16 16:29:58,955 [INFO] faiss.loader: Loading faiss.
+2026-06-16 16:29:59,081 [INFO] faiss.loader: Successfully loaded faiss.
+2026-06-16 16:30:26,290 [INFO] BioReason-X: Triggering analysis for EGFR L858R from Home view.
+2026-06-16 16:30:26,291 [INFO] BioReason-X: Streaming BioReason-X pipeline for mutation: 'EGFR L858R'
+2026-06-16 16:30:26,291 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 16:30:26,334 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'EGFR L858R'
+2026-06-16 16:30:26,334 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Mutation Analysis Agent' with: EGFR L858R
+2026-06-16 16:30:26,754 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 33.277503885s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 33
+}
+]
+2026-06-16 16:30:26,754 [WARNING] BioReason-X: Live Gemini API failed for 'Mutation Analysis Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 33.277503885s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 33
+}
+]
+2026-06-16 16:30:26,757 [INFO] BioReason-X: Running Gene & Protein Agent for: 'EGFR' (Missense Substitution (c.2573T>G, p.Leu858Arg))
+2026-06-16 16:30:26,757 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Gene & Protein Agent' with: EGFR L858R
+2026-06-16 16:30:26,930 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 33.101157816s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 33
+}
+]
+2026-06-16 16:30:26,931 [WARNING] BioReason-X: Live Gemini API failed for 'Gene & Protein Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 33.101157816s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 33
+}
+]
+2026-06-16 16:30:26,932 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'EGFR'
+2026-06-16 16:30:26,932 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Pathway Analysis Agent' with: EGFR L858R
+2026-06-16 16:30:27,232 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 32.798086962s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 32
+}
+]
+2026-06-16 16:30:27,233 [WARNING] BioReason-X: Live Gemini API failed for 'Pathway Analysis Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 32.798086962s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 32
+}
+]
+2026-06-16 16:30:27,234 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'EGFR L858R'
+2026-06-16 16:30:27,235 [INFO] BioReason-X: Initializing Literature Agent BiomedicalRetriever instance.
+2026-06-16 16:30:27,235 [INFO] BioReason-X: Loading HuggingFace Embedding Model: all-MiniLM-L6-v2
+2026-06-16 16:30:27,237 [INFO] sentence_transformers.base.model: No device provided, using cpu
+2026-06-16 16:30:27,886 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:30:27,888 [WARNING] huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-16 16:30:27,898 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-16 16:30:28,108 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:30:28,118 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-16 16:30:28,121 [INFO] sentence_transformers.base.model: Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-16 16:30:28,332 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:30:28,342 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-16 16:30:28,557 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:30:28,567 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-16 16:30:28,782 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:30:28,792 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-16 16:30:29,029 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:30:29,039 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-16 16:30:29,255 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:30:29,480 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:30:29,490 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 16:30:29,853 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:30:30,078 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:30:30,289 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:30:30,517 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:30:30,745 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:30:30,755 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-16 16:30:30,967 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:30:30,976 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 16:30:31,204 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:30:31,213 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 16:30:31,454 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:30:31,464 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-16 16:30:31,689 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-16 16:30:31,901 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-16 16:30:32,187 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:30:32,197 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-16 16:30:32,438 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-16 16:30:32,444 [INFO] BioReason-X: HuggingFace Model loaded. Embedding dimensions: 384
+2026-06-16 16:30:32,446 [INFO] BioReason-X: Loaded 12 source documents from C:\Users\Esha\Downloads\BioReason-X\BioReason-X\data\literature_db.json
+2026-06-16 16:30:32,446 [INFO] BioReason-X: Loading cached FAISS/Vector index...
+2026-06-16 16:30:32,451 [INFO] BioReason-X: Successfully loaded FAISS index.
+2026-06-16 16:30:32,451 [INFO] BioReason-X: Executing RAG retrieval for: 'EGFR L858R'
+2026-06-16 16:30:32,499 [INFO] BioReason-X: Executing RAG retrieval for: 'EGFR mutation clinical significance'
+2026-06-16 16:30:32,515 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 16:30:32,517 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'EGFR'
+2026-06-16 16:30:32,518 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Therapy Recommendation Agent' with: EGFR L858R
+2026-06-16 16:30:32,847 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 27.184768508s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 27
+}
+]
+2026-06-16 16:30:32,847 [WARNING] BioReason-X: Live Gemini API failed for 'Therapy Recommendation Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 27.184768508s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 27
+}
+]
+2026-06-16 16:30:32,848 [INFO] BioReason-X: Running Evidence Validation Agent for: 'EGFR' (EGFR L858R)
+2026-06-16 16:30:32,849 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Evidence Validation Agent' with: EGFR L858R
+2026-06-16 16:30:33,038 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 26.994645598s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 26
+}
+]
+2026-06-16 16:30:33,038 [WARNING] BioReason-X: Live Gemini API failed for 'Evidence Validation Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 26.994645598s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 26
+}
+]
+2026-06-16 16:30:33,039 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'EGFR' (EGFR L858R)
+2026-06-16 16:30:33,040 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Consensus Agent' with: EGFR L858R
+2026-06-16 16:30:33,345 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 26.685827786s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 26
+}
+]
+2026-06-16 16:30:33,346 [WARNING] BioReason-X: Live Gemini API failed for 'Consensus Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 26.685827786s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 26
+}
+]
+2026-06-16 16:30:33,347 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 16:30:33,348 [WARNING] BioReason-X: Neo4j connection failed: No module named 'neo4j'. Falling back to NetworkX.
+2026-06-16 16:30:33,349 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 16:30:33,361 [INFO] BioReason-X: Loaded cached NetworkX graph with 34 nodes.
+2026-06-16 16:30:33,364 [INFO] BioReason-X: Saved NetworkX graph to cache.
+2026-06-16 16:30:33,365 [INFO] BioReason-X: Knowledge Graph injection completed.
+2026-06-16 16:31:08,727 [INFO] BioReason-X: Initializing PDF generation.
+2026-06-16 16:31:08,780 [INFO] BioReason-X: PDF generation completed.
+2026-06-16 16:31:08,782 [INFO] BioReason-X: Initializing DOCX generation.
+2026-06-16 16:31:08,921 [INFO] BioReason-X: DOCX generation completed.
+2026-06-16 16:32:42,079 [INFO] BioReason-X: Initializing PDF generation.
+2026-06-16 16:32:42,154 [INFO] BioReason-X: PDF generation completed.
+2026-06-16 16:32:42,159 [INFO] BioReason-X: Initializing DOCX generation.
+2026-06-16 16:32:42,266 [INFO] BioReason-X: DOCX generation completed.
+2026-06-16 16:33:50,506 [INFO] BioReason-X: Gemini API configured successfully.
+2026-06-16 16:33:55,957 [INFO] BioReason-X: Triggering analysis for EGFR L858R from Home view.
+2026-06-16 16:33:55,958 [INFO] BioReason-X: Streaming BioReason-X pipeline for mutation: 'EGFR L858R'
+2026-06-16 16:33:55,958 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 16:33:55,997 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'EGFR L858R'
+2026-06-16 16:33:55,998 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Mutation Analysis Agent' with: EGFR L858R
+2026-06-16 16:33:56,365 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 3.667602702s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2026-06-16 16:33:56,365 [WARNING] BioReason-X: Live Gemini API failed for 'Mutation Analysis Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 3.667602702s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2026-06-16 16:33:56,368 [INFO] BioReason-X: Running Gene & Protein Agent for: 'EGFR' (Missense Substitution (c.2573T>G, p.Leu858Arg))
+2026-06-16 16:33:56,369 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Gene & Protein Agent' with: EGFR L858R
+2026-06-16 16:33:56,702 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 3.33106786s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2026-06-16 16:33:56,702 [WARNING] BioReason-X: Live Gemini API failed for 'Gene & Protein Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 3.33106786s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2026-06-16 16:33:56,703 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'EGFR'
+2026-06-16 16:33:56,704 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Pathway Analysis Agent' with: EGFR L858R
+2026-06-16 16:33:56,873 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 3.158560352s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2026-06-16 16:33:56,873 [WARNING] BioReason-X: Live Gemini API failed for 'Pathway Analysis Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 3.158560352s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 3
+}
+]
+2026-06-16 16:33:56,875 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'EGFR L858R'
+2026-06-16 16:33:56,875 [INFO] BioReason-X: Initializing Literature Agent BiomedicalRetriever instance.
+2026-06-16 16:33:56,875 [INFO] BioReason-X: Loading HuggingFace Embedding Model: all-MiniLM-L6-v2
+2026-06-16 16:33:56,879 [INFO] sentence_transformers.base.model: No device provided, using cpu
+2026-06-16 16:33:57,123 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:33:57,135 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-16 16:33:57,345 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:33:57,356 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-16 16:33:57,359 [INFO] sentence_transformers.base.model: Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-16 16:33:57,568 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:33:57,578 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-16 16:33:57,788 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:33:57,798 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-16 16:33:58,027 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:33:58,036 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-16 16:33:58,262 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:33:58,273 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-16 16:33:58,503 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:33:58,729 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:33:58,740 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 16:33:59,049 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:33:59,277 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:33:59,492 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:33:59,703 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 16:33:59,923 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:33:59,933 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-16 16:34:00,152 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:34:00,162 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 16:34:00,389 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:34:00,399 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 16:34:00,632 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:34:00,647 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-16 16:34:00,900 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-16 16:34:01,147 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-16 16:34:01,444 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 16:34:01,455 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-16 16:34:01,670 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-16 16:34:01,673 [INFO] BioReason-X: HuggingFace Model loaded. Embedding dimensions: 384
+2026-06-16 16:34:01,674 [INFO] BioReason-X: Loaded 12 source documents from C:\Users\Esha\Downloads\BioReason-X\BioReason-X\data\literature_db.json
+2026-06-16 16:34:01,674 [INFO] BioReason-X: Loading cached FAISS/Vector index...
+2026-06-16 16:34:01,675 [INFO] BioReason-X: Successfully loaded FAISS index.
+2026-06-16 16:34:01,676 [INFO] BioReason-X: Executing RAG retrieval for: 'EGFR L858R'
+2026-06-16 16:34:01,728 [INFO] BioReason-X: Executing RAG retrieval for: 'EGFR mutation clinical significance'
+2026-06-16 16:34:01,746 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 16:34:01,748 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'EGFR'
+2026-06-16 16:34:01,749 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Therapy Recommendation Agent' with: EGFR L858R
+2026-06-16 16:34:01,938 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 58.097531718s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 58
+}
+]
+2026-06-16 16:34:01,938 [WARNING] BioReason-X: Live Gemini API failed for 'Therapy Recommendation Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 58.097531718s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 58
+}
+]
+2026-06-16 16:34:01,940 [INFO] BioReason-X: Running Evidence Validation Agent for: 'EGFR' (EGFR L858R)
+2026-06-16 16:34:01,941 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Evidence Validation Agent' with: EGFR L858R
+2026-06-16 16:34:02,233 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 57.79909953s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 57
+}
+]
+2026-06-16 16:34:02,233 [WARNING] BioReason-X: Live Gemini API failed for 'Evidence Validation Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 57.79909953s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 57
+}
+]
+2026-06-16 16:34:02,235 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'EGFR' (EGFR L858R)
+2026-06-16 16:34:02,235 [INFO] BioReason-X: [LIVE API MODE] Querying Gemini model for agent 'Consensus Agent' with: EGFR L858R
+2026-06-16 16:34:02,438 [ERROR] BioReason-X: Gemini API generation failed: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 57.59403474s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 57
+}
+]
+2026-06-16 16:34:02,438 [WARNING] BioReason-X: Live Gemini API failed for 'Consensus Agent'. Falling back to simulation profile: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 57.59403474s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 57
+}
+]
+2026-06-16 16:34:02,440 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 16:34:02,442 [WARNING] BioReason-X: Neo4j connection failed: No module named 'neo4j'. Falling back to NetworkX.
+2026-06-16 16:34:02,442 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 16:34:02,444 [INFO] BioReason-X: Loaded cached NetworkX graph with 35 nodes.
+2026-06-16 16:34:02,450 [INFO] BioReason-X: Saved NetworkX graph to cache.
+2026-06-16 16:34:02,451 [INFO] BioReason-X: Knowledge Graph injection completed.
+2026-06-16 16:51:19,508 [INFO] BioReason-X: Gemini API configured successfully.

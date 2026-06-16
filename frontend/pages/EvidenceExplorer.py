@@ -1,4 +1,26 @@
 import streamlit as st
+import re
+
+def get_reference_link(doc_id: str) -> str:
+    """Resolves publication/database IDs into clickable direct URLs."""
+    doc_id = doc_id.strip()
+    if doc_id.startswith("PMID-"):
+        pmid = doc_id.replace("PMID-", "")
+        return f"https://pubmed.ncbi.nlm.nih.gov/{pmid}/"
+    elif doc_id.startswith("CLINVAR-"):
+        clinvar_id = doc_id.replace("CLINVAR-", "")
+        match = re.search(r'\d+', clinvar_id)
+        if match:
+            var_id = int(match.group(0))
+            return f"https://www.ncbi.nlm.nih.gov/clinvar/variation/{var_id}/"
+        return f"https://www.ncbi.nlm.nih.gov/clinvar/?term={clinvar_id}"
+    elif doc_id.startswith("REACTOME-"):
+        reactome_id = doc_id.replace("REACTOME-", "")
+        return f"https://reactome.org/content/detail/{reactome_id}"
+    elif doc_id.startswith("DRUGBANK-"):
+        drugbank_id = doc_id.replace("DRUGBANK-", "")
+        return f"https://go.drugbank.com/drugs/{drugbank_id}"
+    return None
 
 def render_evidence_explorer():
     st.markdown("## 🔍 Evidence Explorer")
@@ -29,28 +51,33 @@ def render_evidence_explorer():
         category = doc.get("category", "General Bio-Medical")
         score = doc.get("relevance_score", 0.0)
 
+        link = get_reference_link(doc_id)
+        if link:
+            id_html = f'<a href="{link}" target="_blank" class="badge badge-id" style="text-decoration: none;">{doc_id} 🔗</a>'
+        else:
+            id_html = f'<span class="badge badge-id">{doc_id}</span>'
+
         # Style box matching clinical aesthetics
         st.markdown(
             f"""
-            <div style="background-color: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 8px; padding: 20px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.02);">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;">
-                    <span style="font-weight: 700; font-size: 0.95rem; color: #2B6CB0; background-color: #EBF8FF; padding: 4px 10px; border-radius: 6px;">
-                        {doc_id}
-                    </span>
-                    <span style="font-size: 0.85rem; font-weight: 600; color: #2D3748; background-color: #EDF2F7; padding: 4px 10px; border-radius: 6px;">
+            <div class="evidence-card">
+                <div class="evidence-meta">
+                    {id_html}
+                    <span class="badge badge-source">
                         Source: {source} ({category})
                     </span>
-                    <span style="font-size: 0.85rem; font-weight: 700; color: #319795; background-color: #E6FFFA; padding: 4px 10px; border-radius: 6px;">
+                    <span class="badge badge-relevance">
                         Relevance: {score:.2f}
                     </span>
                 </div>
-                <h4 style="margin: 10px 0; font-size: 1.15rem; font-family: 'Montserrat', sans-serif; color: #1A365D;">
+                <h4 class="evidence-title">
                     {title}
                 </h4>
-                <p style="font-size: 0.95rem; line-height: 1.5; color: #4A5568; margin-top: 10px; font-style: italic;">
+                <p class="evidence-abstract">
                     "{abstract}"
                 </p>
             </div>
             """,
             unsafe_allow_html=True
         )
+

@@ -126,6 +126,53 @@ def render_knowledge_graph():
             if temp_html_path.exists():
                 os.remove(temp_html_path)
 
+            # Apply transparency overrides
+            html_code = html_code.replace('background-color: #ffffff;', 'background-color: transparent;')
+            html_code = html_code.replace('border: 1px solid lightgray;', 'border: none;')
+            
+            style_override = "<style>body { background-color: transparent !important; }</style>"
+            html_code = html_code.replace("</head>", f"{style_override}</head>")
+            
+            # Inject client-side theme detection script
+            dark_mode_script = """
+            <script>
+            window.addEventListener('DOMContentLoaded', (event) => {
+                setTimeout(() => {
+                    const bgColor = window.getComputedStyle(document.body).backgroundColor;
+                    const rgb = bgColor.match(/\\d+/g);
+                    if (rgb) {
+                        const r = parseInt(rgb[0]);
+                        const g = parseInt(rgb[1]);
+                        const b = parseInt(rgb[2]);
+                        const brightness = (r * 299 + g * 587 + b * 114) / 1000;
+                        if (brightness < 128) {
+                            // Dark mode detected! Update vis.js options for visibility
+                            network.setOptions({
+                                nodes: {
+                                    font: {
+                                        color: '#E2E8F0'
+                                    }
+                                },
+                                edges: {
+                                    font: {
+                                        color: '#CBD5E0'
+                                    },
+                                    color: {
+                                        color: '#4A5568',
+                                        highlight: '#319795',
+                                        hover: '#4A5568',
+                                        inherit: false
+                                    }
+                                }
+                            });
+                        }
+                    }
+                }, 100);
+            });
+            </script>
+            """
+            html_code = html_code.replace("</body>", f"{dark_mode_script}</body>")
+
             # Render HTML inside Streamlit
             components.html(html_code, height=580, scrolling=True)
             
