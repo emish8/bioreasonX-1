@@ -253,7 +253,14 @@ def generate_local_llm_content(prompt: str, system_instruction: str = None, json
     }
     
     if json_mode:
-        payload["response_format"] = {"type": "json_object"}
+        # Reasoning models (like DeepSeek-R1) generate <think>...</think> tags first.
+        # Forcing response_format={"type": "json_object"} causes local LLMs (like Ollama)
+        # to fail, block thinking tokens, or return empty/whitespace responses.
+        is_reasoning = any(term in LOCAL_LLM_MODEL.lower() for term in ["r1", "reasoning", "thinking", "qwq"])
+        if is_reasoning:
+            logger.info(f"Reasoning model detected ({LOCAL_LLM_MODEL}). Disabling API-level response_format constraints to allow `<think>` blocks.")
+        else:
+            payload["response_format"] = {"type": "json_object"}
         
     headers = {
         "Content-Type": "application/json"
@@ -270,7 +277,15 @@ def generate_local_llm_content(prompt: str, system_instruction: str = None, json
         with urllib.request.urlopen(req, timeout=60) as response:
             res_data = response.read().decode("utf-8")
             res_json = json.loads(res_data)
-            return res_json["choices"][0]["message"]["content"]
+            content = res_json["choices"][0]["message"]["content"]
+            if json_mode:
+                # Remove DeepSeek-R1 <think>...</think> blocks
+                content = re.sub(r'<think>.*?</think>', '', content, flags=re.DOTALL).strip()
+                # Remove markdown code blocks if present
+                match = re.search(r'```(?:json)?\s*(.*?)\s*```', content, flags=re.DOTALL)
+                if match:
+                    content = match.group(1).strip()
+            return content
     except urllib.error.URLError as e:
         logger.error(f"Failed to connect to local LLM at {url}: {e}")
         raise e

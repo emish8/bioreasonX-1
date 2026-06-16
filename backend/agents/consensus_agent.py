@@ -49,7 +49,7 @@ def run_consensus_agent(state: AgentState) -> AgentState:
         )
         consensus_data = json.loads(response_text)
     except Exception as e:
-        logger.error(f"Error parsing Consensus Agent output: {e}")
+        logger.error(f"Error parsing Consensus Agent output: {e}. Raw response: {repr(response_text) if 'response_text' in locals() else 'N/A'}")
         # Build simple fallback
         v_score = validation_data.get("validation_score", 70.0)
         m_score = mutation_details.get("confidence_score", 70.0)

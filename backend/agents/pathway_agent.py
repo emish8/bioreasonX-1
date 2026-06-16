@@ -33,7 +33,7 @@ def run_pathway_agent(state: AgentState) -> AgentState:
         )
         pathway_data = json.loads(response_text)
     except Exception as e:
-        logger.error(f"Error parsing Pathway Agent output: {e}")
+        logger.error(f"Error parsing Pathway Agent output: {e}. Raw response: {repr(response_text) if 'response_text' in locals() else 'N/A'}")
         pathway_data = {
             "pathway_reasoning": "Downstream biological pathway transduction altered due to mutated gene activity.",
             "affected_pathways": ["Cellular growth pathways"],

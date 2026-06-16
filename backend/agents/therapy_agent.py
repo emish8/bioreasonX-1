@@ -45,7 +45,7 @@ def run_therapy_agent(state: AgentState) -> AgentState:
         )
         therapies_list = json.loads(response_text)
     except Exception as e:
-        logger.error(f"Error parsing Therapy Agent output: {e}")
+        logger.error(f"Error parsing Therapy Agent output: {e}. Raw response: {repr(response_text) if 'response_text' in locals() else 'N/A'}")
         therapies_list = [
             {
                 "drug": "Broad Spectrum Tyrosine Kinase Inhibitor",

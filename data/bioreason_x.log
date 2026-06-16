@@ -1950,3 +1950,9 @@ ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
 2026-06-16 17:22:00,774 [INFO] faiss.loader: Loading faiss.
 2026-06-16 17:22:00,811 [INFO] faiss.loader: Successfully loaded faiss.
 2026-06-16 17:22:59,357 [INFO] BioReason-X: Gemini API configured successfully.
+2026-06-16 18:08:46,486 [INFO] BioReason-X: Gemini API configured successfully.
+2026-06-16 18:08:58,462 [INFO] faiss.loader: Loading faiss with AVX2 support.
+2026-06-16 18:08:58,463 [INFO] faiss.loader: Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-06-16 18:08:58,463 [INFO] faiss.loader: Loading faiss.
+2026-06-16 18:08:58,507 [INFO] faiss.loader: Successfully loaded faiss.

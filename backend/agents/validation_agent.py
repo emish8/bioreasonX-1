@@ -52,7 +52,7 @@ def run_validation_agent(state: AgentState) -> AgentState:
         )
         validation_data = json.loads(response_text)
     except Exception as e:
-        logger.error(f"Error parsing Validation Agent output: {e}")
+        logger.error(f"Error parsing Validation Agent output: {e}. Raw response: {repr(response_text) if 'response_text' in locals() else 'N/A'}")
         validation_data = {
             "is_valid": True,
             "validation_score": 70.0,

@@ -26,7 +26,7 @@ def run_mutation_agent(state: AgentState) -> AgentState:
         # Parse output
         details = json.loads(response_text)
     except Exception as e:
-        logger.error(f"Error parsing Mutation Agent output: {e}")
+        logger.error(f"Error parsing Mutation Agent output: {e}. Raw response: {repr(response_text) if 'response_text' in locals() else 'N/A'}")
         details = {
             "gene": "Unknown",
             "mutation_type": "Unknown",
