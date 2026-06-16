@@ -1,0 +1,150 @@
+import streamlit as st
+import streamlit.components.v1 as components
+import os
+from pathlib import Path
+
+from backend.knowledge_graph.graph_builder import BiomedicalGraph
+from backend.utils.config import DATA_DIR, logger
+
+# Try importing pyvis, fallback if needed
+try:
+    from pyvis.network import Network
+    HAS_PYVIS = True
+except ImportError:
+    logger.warning("pyvis not installed. Falling back to static graph elements representation.")
+    HAS_PYVIS = False
+
+# Node color styling map
+CATEGORY_COLORS = {
+    "Mutation": "#ED8936",    # Orange
+    "Gene": "#4299E1",        # Blue
+    "Protein": "#9F7AEA",     # Purple
+    "Pathway": "#319795",     # Teal
+    "Disease": "#E53E3E",     # Deep Red
+    "Drug": "#48BB78",        # Green
+    "Publication": "#ECC94B"  # Gold
+}
+
+def render_knowledge_graph():
+    st.markdown("## 🕸️ Biomedical Knowledge Graph Explorer")
+    st.markdown(
+        """
+        Explore the network relationships dynamically generated from agent outputs and RAG ingestion.
+        Nodes represent biological entities, and edges represent clinical mechanisms.
+        """
+    )
+
+    # Key Legend
+    st.markdown(
+        """
+        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px; font-size: 0.9rem;">
+            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#ED8936; margin-right:5px;"></span>Mutation</div>
+            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#4299E1; margin-right:5px;"></span>Gene</div>
+            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#9F7AEA; margin-right:5px;"></span>Protein</div>
+            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#319795; margin-right:5px;"></span>Pathway</div>
+            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#E53E3E; margin-right:5px;"></span>Disease</div>
+            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#48BB78; margin-right:5px;"></span>Drug</div>
+            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#ECC94B; margin-right:5px;"></span>Publication</div>
+        </div>
+        """,
+        unsafe_allow_html=True
+    )
+
+    # Initialize graph backend
+    graph_engine = BiomedicalGraph()
+    nodes, edges = graph_engine.get_pyvis_elements()
+    graph_engine.close()
+
+    if not nodes:
+        st.info("The knowledge graph is currently empty. Run an analysis first to populate it.")
+        return
+
+    # Check for pyvis availability
+    if HAS_PYVIS:
+        try:
+            # Create Network graph
+            net = Network(
+                height="550px", 
+                width="100%", 
+                bgcolor="#ffffff", 
+                font_color="#2D3748", 
+                directed=True
+            )
+            
+            # Physics Configuration
+            net.barnes_hut(
+                gravity=-3000, 
+                central_gravity=0.3, 
+                spring_length=120, 
+                spring_strength=0.04, 
+                damping=0.85
+            )
+
+            # Add nodes
+            for node in nodes:
+                node_id = node["id"]
+                label = node["label"]
+                category = node["category"]
+                properties = node.get("properties", {})
+                
+                # Make a tooltip listing node details
+                tooltip_parts = [f"<b>{label}</b> ({category})"]
+                for k, v in properties.items():
+                    tooltip_parts.append(f"{k}: {v}")
+                tooltip = "<br>".join(tooltip_parts)
+                
+                color = CATEGORY_COLORS.get(category, "#A0AEC0") # Gray fallback
+                
+                net.add_node(
+                    node_id, 
+                    label=label, 
+                    title=tooltip, 
+                    color=color, 
+                    size=22 if category in ["Mutation", "Gene"] else 18
+                )
+
+            # Add edges
+            for edge in edges:
+                net.add_edge(
+                    edge["from"], 
+                    edge["to"], 
+                    title=edge["label"], 
+                    label=edge["label"], 
+                    color="#CBD5E0", 
+                    width=1.5
+                )
+
+            # Save file to generate html string
+            temp_html_path = DATA_DIR / "temp_graph.html"
+            net.write_html(str(temp_html_path))
+
+            # Read file contents
+            with open(temp_html_path, "r", encoding="utf-8") as f:
+                html_code = f.read()
+
+            # Remove temporary file
+            if temp_html_path.exists():
+                os.remove(temp_html_path)
+
+            # Render HTML inside Streamlit
+            components.html(html_code, height=580, scrolling=True)
+            
+        except Exception as e:
+            st.error(f"Failed to render Pyvis visualization: {e}")
+            logger.exception(e)
+            render_fallback_lists(nodes, edges)
+    else:
+        st.warning("Pyvis is not installed in the current environment. Displaying graph relationships in list format below.")
+        render_fallback_lists(nodes, edges)
+
+
+def render_fallback_lists(nodes, edges):
+    """Fallback representation for when Pyvis visual library is missing or fails."""
+    st.markdown("### Nodes (Biological Entities)")
+    import pandas as pd
+    df_nodes = pd.DataFrame(nodes)
+    st.dataframe(df_nodes[["id", "category"]], use_container_width=True)
+    
+    st.markdown("### Directed Edges (Mechanisms)")
+    df_edges = pd.DataFrame(edges)
+    st.dataframe(df_edges, use_container_width=True)

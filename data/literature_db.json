@@ -1,0 +1,157 @@
+[
+  {
+    "id": "PMID-29402511",
+    "title": "Synthetic Lethality in BRCA1 c.5266dupC Breast Cancer Carriers Using Olaparib",
+    "abstract": "The BRCA1 c.5266dupC founder mutation leads to a frameshift and premature termination of the BRCA1 protein, impairing its critical role in double-strand DNA break repair via homologous recombination. This Homologous Recombination Deficiency (HRD) creates an therapeutic window for Poly(ADP-ribose) polymerase (PARP) inhibitors. This clinical study demonstrates that Olaparib achieves significant progression-free survival in patients carrying the c.5266dupC frameshift variant compared to standard chemotherapy, establishing the mechanism of synthetic lethality.",
+    "source": "PubMed",
+    "category": "Literature",
+    "metadata": {
+      "gene": "BRCA1",
+      "mutation": "c.5266dupC",
+      "pathway": "Homologous Recombination DNA Repair",
+      "disease": "Breast Cancer",
+      "drug": "Olaparib"
+    }
+  },
+  {
+    "id": "CLINVAR-VCV000003767",
+    "title": "ClinVar Record for BRCA1 c.5266dupC (p.Gln1756Profs)",
+    "abstract": "Variant BRCA1 c.5266dupC is classified as Pathogenic. It consists of a single cytosine duplication at position 5266, resulting in a frameshift that introduces a stop codon at amino acid position 1756. This disrupts the C-terminal BRCT domains of the BRCA1 protein which are required for cell cycle checkpoint control and DNA repair. The variant is strongly associated with high penetrance autosomal dominant hereditary breast and ovarian cancer syndrome.",
+    "source": "ClinVar",
+    "category": "Clinical Significance",
+    "metadata": {
+      "gene": "BRCA1",
+      "mutation": "c.5266dupC",
+      "clinical_significance": "Pathogenic",
+      "inheritance": "Autosomal Dominant"
+    }
+  },
+  {
+    "id": "REACTOME-R-HSA-5693532",
+    "title": "Homologous Recombination Repair and Cell Cycle Control Pathway",
+    "abstract": "The Reactome database documents the pathway of Homologous Recombination (HR) repair of DNA double-strand breaks. In this pathway, BRCA1 acts as a scaffold protein forming the BRCA1-BARD1 complex, which recruits RAD51 to the sites of DNA damage. Truncation mutations in BRCA1, such as those caused by frame-shifting indels, fail to localize to double-strand breaks, halting homologous recombination. Downstream cells rely on error-prone non-homologous end joining (NHEJ), which leads to genomic instability and oncogenesis.",
+    "source": "Reactome",
+    "category": "Pathway",
+    "metadata": {
+      "gene": "BRCA1",
+      "pathway": "DNA Repair / Homologous Recombination",
+      "associated_complex": "BRCA1-BARD1"
+    }
+  },
+  {
+    "id": "DRUGBANK-DB00947",
+    "title": "Olaparib - DrugBank Profile and Target Mechanism",
+    "abstract": "Olaparib is an FDA-approved targeted small-molecule inhibitor of PARP1 and PARP2. In cells with BRCA1 mutations, homologous recombination is deficient. When Olaparib binds to PARP, it traps the enzyme on DNA single-strand breaks, preventing their repair and turning them into double-strand breaks during replication. Because BRCA-deficient tumor cells cannot repair these double-strand breaks, they undergo selective apoptosis (synthetic lethality) while normal cells remain viable.",
+    "source": "DrugBank",
+    "category": "Drug",
+    "metadata": {
+      "drug_name": "Olaparib",
+      "target": "PARP1 / PARP2",
+      "indication": "BRCA-mutated cancers",
+      "status": "Approved"
+    }
+  },
+  {
+    "id": "PMID-26458312",
+    "title": "EGFR Exon 21 L858R Mutation and Tyrosine Kinase Inhibitor Sensitivity in Lung Adenocarcinoma",
+    "abstract": "The somatic EGFR c.2573T>G (p.Leu858Arg / L858R) mutation located in exon 21 is one of the most common activating mutations in non-small cell lung cancer (NSCLC). This missense mutation substitutes a leucine with an arginine at position 858, destabilizing the inactive state of the EGFR kinase domain. This leads to ligand-independent, constitutive activation of the tyrosine kinase and hyperactivation of downstream signaling cascades, including the MAPK/ERK and PI3K/Akt pathways. Third-generation EGFR tyrosine kinase inhibitors (TKIs) like Osimertinib show robust efficacy against L858R-mutant tumors.",
+    "source": "PubMed",
+    "category": "Literature",
+    "metadata": {
+      "gene": "EGFR",
+      "mutation": "L858R",
+      "pathway": "Receptor Tyrosine Kinase Signaling",
+      "disease": "Non-Small Cell Lung Cancer",
+      "drug": "Osimertinib"
+    }
+  },
+  {
+    "id": "CLINVAR-VCV000016617",
+    "title": "ClinVar Record for EGFR L858R (c.2573T>G)",
+    "abstract": "The EGFR L858R somatic mutation is classified as Pathogenic in the context of somatic lung cancers. It leads to activation of the EGFR receptor and increases sensitivity to gefitinib, erlotinib, and osimertinib. It is frequently associated with Adenocarcinoma of the lung and shows distinct ethnic distributions, being more prevalent in East Asian populations and non-smokers.",
+    "source": "ClinVar",
+    "category": "Clinical Significance",
+    "metadata": {
+      "gene": "EGFR",
+      "mutation": "L858R",
+      "clinical_significance": "Pathogenic / Drug-Sensitive"
+    }
+  },
+  {
+    "id": "REACTOME-R-HSA-5655228",
+    "title": "EGFR Signaling Cascade Pathway Map",
+    "abstract": "This pathway covers signaling by EGFR. Upon ligand binding or activating mutation (e.g., L858R), the receptor homodimerizes and autophosphorylates tyrosine residues in its intracellular domain. This recruits adaptor proteins GRB2 and SOS, which trigger the RAS-RAF-MEK-ERK (MAPK) signaling pathway, promoting cell proliferation, survival, and migration. Downstream activation of AKT via PI3K is also stimulated, leading to resistance to apoptosis.",
+    "source": "Reactome",
+    "category": "Pathway",
+    "metadata": {
+      "gene": "EGFR",
+      "pathway": "EGFR Signaling / MAPK / PI3K-Akt",
+      "downstream_effect": "Cell Proliferation"
+    }
+  },
+  {
+    "id": "DRUGBANK-DB09330",
+    "title": "Osimertinib - DrugBank Profile and Action",
+    "abstract": "Osimertinib is an irreversible, third-generation EGFR tyrosine kinase inhibitor (TKI) that targets both activating EGFR mutations (like L858R and exon 19 deletions) and the T790M resistance mutation. Osimertinib binds covalently to the C797 residue in the ATP-binding site of EGFR, preventing ATP binding and receptor autophosphorylation. This halts downstream MAPK and PI3K/Akt signaling, inducing apoptosis in mutated NSCLC cells.",
+    "source": "DrugBank",
+    "category": "Drug",
+    "metadata": {
+      "drug_name": "Osimertinib",
+      "target": "EGFR kinase domain",
+      "indication": "EGFR-mutated NSCLC",
+      "status": "Approved"
+    }
+  },
+  {
+    "id": "PMID-21876543",
+    "title": "Targeted Inhibition of BRAF V600E Mutation in Metastatic Melanoma",
+    "abstract": "The BRAF V600E mutation represents a thymine-to-adenine transversion at nucleotide 1799, resulting in the substitution of valine by glutamic acid at codon 600. This mimics regulatory phosphorylation, leading to a 500-fold increase in kinase activity compared to wild-type BRAF. The active monomer stimulates downstream MEK and ERK kinases independently of RAS upstream activation. The BRAF inhibitor Vemurafenib selectively binds the ATP-binding pocket of active V600E monomers, blocking MAPK cascade hyperactivation and inducing dramatic tumor regression in patients with V600E-positive metastatic melanoma.",
+    "source": "PubMed",
+    "category": "Literature",
+    "metadata": {
+      "gene": "BRAF",
+      "mutation": "V600E",
+      "pathway": "MAPK Signaling Cascade",
+      "disease": "Metastatic Melanoma",
+      "drug": "Vemurafenib"
+    }
+  },
+  {
+    "id": "CLINVAR-VCV000013961",
+    "title": "ClinVar Record for BRAF p.Val600Glu (V600E)",
+    "abstract": "Variant BRAF V600E is classified as Pathogenic in somatic tumors. The mutation is highly prevalent in cutaneous melanoma (50%), papillary thyroid carcinoma (45%), colorectal cancers (10%), and non-small cell lung cancer. It predicts positive response to RAF/MEK dual inhibitors (e.g., Dabrafenib + Trametinib).",
+    "source": "ClinVar",
+    "category": "Clinical Significance",
+    "metadata": {
+      "gene": "BRAF",
+      "mutation": "V600E",
+      "clinical_significance": "Pathogenic",
+      "somatic_associations": "Melanoma, Colorectal, Thyroid"
+    }
+  },
+  {
+    "id": "REACTOME-R-HSA-5674400",
+    "title": "MAPK / RAF-MEK-ERK Cascade Pathway Map",
+    "abstract": "The RAF-MEK-ERK signaling pathway is a central kinase cascade downstream of RAS. Active RAF (ARAF, BRAF, CRAF) phosphorylates and activates MEK1/2, which in turn phosphorylates ERK1/2. Phosphorylated ERK translocates to the nucleus to activate transcription factors like ELK1 and MYC, promoting G1-S cell cycle transition. Somatic activating mutations in BRAF bypass upstream RAS control, causing sustained, oncogenic signaling driving cell survival and chemotherapy resistance.",
+    "source": "Reactome",
+    "category": "Pathway",
+    "metadata": {
+      "gene": "BRAF",
+      "pathway": "RAF-MEK-ERK Cascade",
+      "cellular_location": "Cytosol / Nucleus"
+    }
+  },
+  {
+    "id": "DRUGBANK-DB08881",
+    "title": "Vemurafenib - DrugBank Profile and Action",
+    "abstract": "Vemurafenib is a small-molecule inhibitor of the BRAF serine-threonine kinase. It binds selectively to the ATP-binding site of mutated BRAF V600E kinase, blocking downstream MEK/ERK activation. Interestingly, in wild-type BRAF cells, Vemurafenib can induce paradoxical activation of the pathway, making it highly specific for V600E-mutant malignancies.",
+    "source": "DrugBank",
+    "category": "Drug",
+    "metadata": {
+      "drug_name": "Vemurafenib",
+      "target": "BRAF V600E kinase",
+      "indication": "BRAF V600E Melanoma",
+      "status": "Approved"
+    }
+  }
+]

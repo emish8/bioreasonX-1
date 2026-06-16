@@ -1,0 +1,307 @@
+2026-06-16 03:36:02,568 [INFO] faiss.loader: Loading faiss with AVX2 support.
+2026-06-16 03:36:02,569 [INFO] faiss.loader: Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-06-16 03:36:02,569 [INFO] faiss.loader: Loading faiss.
+2026-06-16 03:36:02,611 [INFO] faiss.loader: Successfully loaded faiss.
+2026-06-16 03:37:33,222 [INFO] faiss.loader: Loading faiss with AVX2 support.
+2026-06-16 03:37:33,223 [INFO] faiss.loader: Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-06-16 03:37:33,223 [INFO] faiss.loader: Loading faiss.
+2026-06-16 03:37:33,253 [INFO] faiss.loader: Successfully loaded faiss.
+2026-06-16 03:37:51,994 [INFO] BioReason-X: Triggering analysis for BRCA1 c.5266dupC from Home view.
+2026-06-16 03:37:51,995 [INFO] BioReason-X: Triggering BioReason-X pipeline for mutation: 'BRCA1 c.5266dupC'
+2026-06-16 03:37:51,996 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 03:37:52,023 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'BRCA1 c.5266dupC'
+2026-06-16 03:37:52,024 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Mutation Analysis Agent' resolving profile for target: BRCA1 c.5266dupC
+2026-06-16 03:37:52,026 [INFO] BioReason-X: Running Gene & Protein Agent for: 'BRCA1' (Frameshift Insertion (c.5266dupC))
+2026-06-16 03:37:52,026 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Gene & Protein Agent' resolving profile for target: BRCA1 c.5266dupC
+2026-06-16 03:37:52,027 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'BRCA1'
+2026-06-16 03:37:52,027 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Pathway Analysis Agent' resolving profile for target: BRCA1 c.5266dupC
+2026-06-16 03:37:52,034 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'BRCA1 c.5266dupC'
+2026-06-16 03:37:52,034 [INFO] BioReason-X: Initializing Literature Agent BiomedicalRetriever instance.
+2026-06-16 03:37:52,034 [INFO] BioReason-X: Loading HuggingFace Embedding Model: all-MiniLM-L6-v2
+2026-06-16 03:37:52,036 [INFO] sentence_transformers.base.model: No device provided, using cpu
+2026-06-16 03:37:52,590 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/agent-harnesses "HTTP/1.1 200 OK"
+2026-06-16 03:37:52,799 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:37:52,800 [WARNING] huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-16 03:37:52,810 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-16 03:37:52,828 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-16 03:37:53,045 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:37:53,055 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-16 03:37:53,070 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-16 03:37:53,076 [INFO] sentence_transformers.base.model: Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-16 03:37:53,290 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:37:53,301 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-16 03:37:53,509 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:37:53,519 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-16 03:37:53,531 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-16 03:37:53,744 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:37:53,754 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-16 03:37:53,964 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:37:53,974 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-16 03:37:53,986 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-16 03:37:54,208 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 03:37:54,417 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:37:54,427 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 03:37:54,440 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 03:37:54,702 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/model.safetensors "HTTP/1.1 302 Found"
+2026-06-16 03:37:58,668 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 03:37:58,879 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 03:37:59,089 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 03:37:59,304 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 03:37:59,514 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:37:59,525 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-16 03:37:59,538 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-16 03:37:59,751 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:37:59,762 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 03:37:59,977 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:37:59,987 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 03:38:00,199 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:38:00,210 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-16 03:38:00,425 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-16 03:38:00,639 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-16 03:38:00,847 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/vocab.txt "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:38:00,857 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt "HTTP/1.1 200 OK"
+2026-06-16 03:38:00,870 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/vocab.txt "HTTP/1.1 200 OK"
+2026-06-16 03:38:01,090 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:38:01,101 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json "HTTP/1.1 200 OK"
+2026-06-16 03:38:01,115 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer.json "HTTP/1.1 200 OK"
+2026-06-16 03:38:01,347 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/added_tokens.json "HTTP/1.1 404 Not Found"
+2026-06-16 03:38:01,554 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/special_tokens_map.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:38:01,565 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-06-16 03:38:01,577 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/special_tokens_map.json "HTTP/1.1 200 OK"
+2026-06-16 03:38:01,794 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/chat_template.jinja "HTTP/1.1 404 Not Found"
+2026-06-16 03:38:02,054 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:38:02,065 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-16 03:38:02,078 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-16 03:38:02,295 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-16 03:38:02,299 [INFO] BioReason-X: HuggingFace Model loaded. Embedding dimensions: 384
+2026-06-16 03:38:02,299 [INFO] BioReason-X: Loaded 12 source documents from C:\Users\Hem\.gemini\antigravity-ide\scratch\BioReason-X\data\literature_db.json
+2026-06-16 03:38:02,300 [INFO] BioReason-X: Building new vector database index...
+2026-06-16 03:38:02,655 [INFO] BioReason-X: FAISS index built and saved with 12 entries.
+2026-06-16 03:38:02,655 [INFO] BioReason-X: Executing RAG retrieval for: 'BRCA1 c.5266dupC'
+2026-06-16 03:38:02,667 [INFO] BioReason-X: Executing RAG retrieval for: 'BRCA1 mutation clinical significance'
+2026-06-16 03:38:02,677 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 03:38:02,678 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'BRCA1'
+2026-06-16 03:38:02,678 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Therapy Recommendation Agent' resolving profile for target: BRCA1 c.5266dupC
+2026-06-16 03:38:02,679 [INFO] BioReason-X: Running Evidence Validation Agent for: 'BRCA1' (BRCA1 c.5266dupC)
+2026-06-16 03:38:02,679 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Evidence Validation Agent' resolving profile for target: BRCA1 c.5266dupC
+2026-06-16 03:38:02,680 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'BRCA1' (BRCA1 c.5266dupC)
+2026-06-16 03:38:02,680 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Consensus Agent' resolving profile for target: BRCA1 c.5266dupC
+2026-06-16 03:38:02,680 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 03:38:02,681 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 03:38:02,681 [INFO] BioReason-X: Building default biomedical graph...
+2026-06-16 03:38:02,682 [ERROR] BioReason-X: Error injecting results into knowledge graph: networkx.classes.digraph.DiGraph.add_node() got multiple values for keyword argument 'label'
+2026-06-16 03:38:21,318 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 03:38:21,318 [INFO] BioReason-X: Building default biomedical graph...
+2026-06-16 03:38:31,971 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 03:38:31,971 [INFO] BioReason-X: Building default biomedical graph...
+2026-06-16 03:39:06,975 [INFO] BioReason-X: Initializing PDF generation.
+2026-06-16 03:39:07,000 [INFO] BioReason-X: PDF generation completed.
+2026-06-16 03:39:07,002 [INFO] BioReason-X: Initializing DOCX generation.
+2026-06-16 03:39:07,064 [INFO] BioReason-X: DOCX generation completed.
+2026-06-16 03:39:24,327 [INFO] BioReason-X: Initializing PDF generation.
+2026-06-16 03:39:24,351 [INFO] BioReason-X: PDF generation completed.
+2026-06-16 03:39:24,353 [INFO] BioReason-X: Initializing DOCX generation.
+2026-06-16 03:39:24,417 [INFO] BioReason-X: DOCX generation completed.
+2026-06-16 03:42:51,576 [INFO] BioReason-X: Triggering analysis for BRCA1 c.5266dupC from Home view.
+2026-06-16 03:42:51,577 [INFO] BioReason-X: Triggering BioReason-X pipeline for mutation: 'BRCA1 c.5266dupC'
+2026-06-16 03:42:51,577 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 03:42:51,600 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'BRCA1 c.5266dupC'
+2026-06-16 03:42:51,600 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Mutation Analysis Agent' resolving profile for target: BRCA1 c.5266dupC
+2026-06-16 03:42:51,602 [INFO] BioReason-X: Running Gene & Protein Agent for: 'BRCA1' (Frameshift Insertion (c.5266dupC))
+2026-06-16 03:42:51,602 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Gene & Protein Agent' resolving profile for target: BRCA1 c.5266dupC
+2026-06-16 03:42:51,603 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'BRCA1'
+2026-06-16 03:42:51,603 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Pathway Analysis Agent' resolving profile for target: BRCA1 c.5266dupC
+2026-06-16 03:42:51,604 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'BRCA1 c.5266dupC'
+2026-06-16 03:42:51,604 [INFO] BioReason-X: Executing RAG retrieval for: 'BRCA1 c.5266dupC'
+2026-06-16 03:42:51,629 [INFO] BioReason-X: Executing RAG retrieval for: 'BRCA1 mutation clinical significance'
+2026-06-16 03:42:51,642 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 03:42:51,648 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'BRCA1'
+2026-06-16 03:42:51,648 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Therapy Recommendation Agent' resolving profile for target: BRCA1 c.5266dupC
+2026-06-16 03:42:51,650 [INFO] BioReason-X: Running Evidence Validation Agent for: 'BRCA1' (BRCA1 c.5266dupC)
+2026-06-16 03:42:51,651 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Evidence Validation Agent' resolving profile for target: BRCA1 c.5266dupC
+2026-06-16 03:42:51,652 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'BRCA1' (BRCA1 c.5266dupC)
+2026-06-16 03:42:51,654 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Consensus Agent' resolving profile for target: BRCA1 c.5266dupC
+2026-06-16 03:42:51,658 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 03:42:51,658 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 03:42:51,659 [INFO] BioReason-X: Building default biomedical graph...
+2026-06-16 03:42:51,659 [ERROR] BioReason-X: Error injecting results into knowledge graph: networkx.classes.digraph.DiGraph.add_node() got multiple values for keyword argument 'label'
+2026-06-16 03:47:23,879 [INFO] BioReason-X: Initializing PDF generation.
+2026-06-16 03:47:23,902 [INFO] BioReason-X: PDF generation completed.
+2026-06-16 03:47:23,904 [INFO] BioReason-X: Initializing DOCX generation.
+2026-06-16 03:47:23,958 [INFO] BioReason-X: DOCX generation completed.
+2026-06-16 03:47:28,566 [INFO] BioReason-X: Initializing PDF generation.
+2026-06-16 03:47:28,588 [INFO] BioReason-X: PDF generation completed.
+2026-06-16 03:47:28,596 [INFO] BioReason-X: Initializing DOCX generation.
+2026-06-16 03:47:28,663 [INFO] BioReason-X: DOCX generation completed.
+2026-06-16 03:50:46,211 [INFO] BioReason-X: Triggering analysis for EGFR L858R from Home view.
+2026-06-16 03:50:46,211 [INFO] BioReason-X: Triggering BioReason-X pipeline for mutation: 'EGFR L858R'
+2026-06-16 03:50:46,211 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 03:50:46,234 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'EGFR L858R'
+2026-06-16 03:50:46,235 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Mutation Analysis Agent' resolving profile for target: EGFR L858R
+2026-06-16 03:50:46,236 [INFO] BioReason-X: Running Gene & Protein Agent for: 'EGFR' (Missense Substitution (c.2573T>G, p.Leu858Arg))
+2026-06-16 03:50:46,236 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Gene & Protein Agent' resolving profile for target: EGFR L858R
+2026-06-16 03:50:46,237 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'EGFR'
+2026-06-16 03:50:46,237 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Pathway Analysis Agent' resolving profile for target: EGFR L858R
+2026-06-16 03:50:46,238 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'EGFR L858R'
+2026-06-16 03:50:46,238 [INFO] BioReason-X: Executing RAG retrieval for: 'EGFR L858R'
+2026-06-16 03:50:46,262 [INFO] BioReason-X: Executing RAG retrieval for: 'EGFR mutation clinical significance'
+2026-06-16 03:50:46,274 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 03:50:46,276 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'EGFR'
+2026-06-16 03:50:46,276 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Therapy Recommendation Agent' resolving profile for target: EGFR L858R
+2026-06-16 03:50:46,284 [INFO] BioReason-X: Running Evidence Validation Agent for: 'EGFR' (EGFR L858R)
+2026-06-16 03:50:46,284 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Evidence Validation Agent' resolving profile for target: EGFR L858R
+2026-06-16 03:50:46,285 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'EGFR' (EGFR L858R)
+2026-06-16 03:50:46,286 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Consensus Agent' resolving profile for target: EGFR L858R
+2026-06-16 03:50:46,286 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 03:50:46,287 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 03:50:46,287 [INFO] BioReason-X: Building default biomedical graph...
+2026-06-16 03:50:46,287 [ERROR] BioReason-X: Error injecting results into knowledge graph: networkx.classes.digraph.DiGraph.add_node() got multiple values for keyword argument 'label'
+2026-06-16 03:51:41,239 [INFO] BioReason-X: Triggering analysis for HGVS from Home view.
+2026-06-16 03:51:41,239 [INFO] BioReason-X: Triggering BioReason-X pipeline for mutation: 'HGVS'
+2026-06-16 03:51:41,239 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 03:51:41,261 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'HGVS'
+2026-06-16 03:51:41,262 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Mutation Analysis Agent' resolving profile for target: HGVS
+2026-06-16 03:51:41,263 [INFO] BioReason-X: Running Gene & Protein Agent for: 'HGVS' (Missense Variant (p.Xxx123Yyy))
+2026-06-16 03:51:41,263 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Gene & Protein Agent' resolving profile for target: HGVS
+2026-06-16 03:51:41,264 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'HGVS'
+2026-06-16 03:51:41,264 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Pathway Analysis Agent' resolving profile for target: HGVS
+2026-06-16 03:51:41,265 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'HGVS'
+2026-06-16 03:51:41,265 [INFO] BioReason-X: Executing RAG retrieval for: 'HGVS'
+2026-06-16 03:51:41,289 [INFO] BioReason-X: Executing RAG retrieval for: 'HGVS mutation clinical significance'
+2026-06-16 03:51:41,304 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 03:51:41,306 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'HGVS'
+2026-06-16 03:51:41,306 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Therapy Recommendation Agent' resolving profile for target: HGVS
+2026-06-16 03:51:41,307 [INFO] BioReason-X: Running Evidence Validation Agent for: 'HGVS' (HGVS)
+2026-06-16 03:51:41,308 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Evidence Validation Agent' resolving profile for target: HGVS
+2026-06-16 03:51:41,309 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'HGVS' (HGVS)
+2026-06-16 03:51:41,309 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Consensus Agent' resolving profile for target: HGVS
+2026-06-16 03:51:41,310 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 03:51:41,310 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 03:51:41,310 [INFO] BioReason-X: Building default biomedical graph...
+2026-06-16 03:51:41,315 [ERROR] BioReason-X: Error injecting results into knowledge graph: networkx.classes.digraph.DiGraph.add_node() got multiple values for keyword argument 'label'
+2026-06-16 03:53:34,096 [INFO] faiss.loader: Loading faiss with AVX2 support.
+2026-06-16 03:53:34,096 [INFO] faiss.loader: Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-06-16 03:53:34,097 [INFO] faiss.loader: Loading faiss.
+2026-06-16 03:53:34,209 [INFO] faiss.loader: Successfully loaded faiss.
+2026-06-16 03:53:43,720 [INFO] BioReason-X: Triggering analysis for EGFR L858R from Home view.
+2026-06-16 03:53:43,720 [INFO] BioReason-X: Triggering BioReason-X pipeline for mutation: 'EGFR L858R'
+2026-06-16 03:53:43,720 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 03:53:43,755 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'EGFR L858R'
+2026-06-16 03:53:43,755 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Mutation Analysis Agent' resolving profile for target: EGFR L858R
+2026-06-16 03:53:43,757 [INFO] BioReason-X: Running Gene & Protein Agent for: 'EGFR' (Missense Substitution (c.2573T>G, p.Leu858Arg))
+2026-06-16 03:53:43,865 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Gene & Protein Agent' resolving profile for target: EGFR L858R
+2026-06-16 03:53:43,866 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'EGFR'
+2026-06-16 03:53:43,866 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Pathway Analysis Agent' resolving profile for target: EGFR L858R
+2026-06-16 03:53:43,867 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'EGFR L858R'
+2026-06-16 03:53:43,867 [INFO] BioReason-X: Initializing Literature Agent BiomedicalRetriever instance.
+2026-06-16 03:53:43,867 [INFO] BioReason-X: Loading HuggingFace Embedding Model: all-MiniLM-L6-v2
+2026-06-16 03:53:43,869 [INFO] sentence_transformers.base.model: No device provided, using cpu
+2026-06-16 03:53:44,376 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:53:44,377 [WARNING] huggingface_hub.utils._http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+2026-06-16 03:53:44,400 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-16 03:53:44,640 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:53:44,663 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-16 03:53:44,665 [INFO] sentence_transformers.base.model: Loading SentenceTransformer model from sentence-transformers/all-MiniLM-L6-v2.
+2026-06-16 03:53:44,901 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:53:44,924 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config_sentence_transformers.json "HTTP/1.1 200 OK"
+2026-06-16 03:53:45,154 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:53:45,177 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/README.md "HTTP/1.1 200 OK"
+2026-06-16 03:53:45,418 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:53:45,440 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/modules.json "HTTP/1.1 200 OK"
+2026-06-16 03:53:45,690 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:53:45,714 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/sentence_bert_config.json "HTTP/1.1 200 OK"
+2026-06-16 03:53:45,965 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 03:53:46,196 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:53:46,219 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 03:53:46,573 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/processor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 03:53:46,817 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 03:53:47,060 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/video_preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 03:53:47,296 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/preprocessor_config.json "HTTP/1.1 404 Not Found"
+2026-06-16 03:53:47,526 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:53:47,549 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-16 03:53:47,783 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:53:47,805 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 03:53:48,052 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:53:48,074 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/config.json "HTTP/1.1 200 OK"
+2026-06-16 03:53:48,313 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:53:48,335 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/tokenizer_config.json "HTTP/1.1 200 OK"
+2026-06-16 03:53:48,580 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"
+2026-06-16 03:53:49,217 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"
+2026-06-16 03:53:49,505 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json "HTTP/1.1 307 Temporary Redirect"
+2026-06-16 03:53:49,528 [INFO] httpx: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/1110a243fdf4706b3f48f1d95db1a4f5529b4d41/1_Pooling%2Fconfig.json "HTTP/1.1 200 OK"
+2026-06-16 03:53:49,828 [INFO] httpx: HTTP Request: GET https://huggingface.co/api/models/sentence-transformers/all-MiniLM-L6-v2 "HTTP/1.1 200 OK"
+2026-06-16 03:53:49,831 [INFO] BioReason-X: HuggingFace Model loaded. Embedding dimensions: 384
+2026-06-16 03:53:49,832 [INFO] BioReason-X: Loaded 12 source documents from C:\Users\Hem\.gemini\antigravity-ide\scratch\BioReason-X\data\literature_db.json
+2026-06-16 03:53:49,832 [INFO] BioReason-X: Loading cached FAISS/Vector index...
+2026-06-16 03:53:49,833 [INFO] BioReason-X: Successfully loaded FAISS index.
+2026-06-16 03:53:49,833 [INFO] BioReason-X: Executing RAG retrieval for: 'EGFR L858R'
+2026-06-16 03:53:49,862 [INFO] BioReason-X: Executing RAG retrieval for: 'EGFR mutation clinical significance'
+2026-06-16 03:53:49,879 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 03:53:49,880 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'EGFR'
+2026-06-16 03:53:49,880 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Therapy Recommendation Agent' resolving profile for target: EGFR L858R
+2026-06-16 03:53:49,881 [INFO] BioReason-X: Running Evidence Validation Agent for: 'EGFR' (EGFR L858R)
+2026-06-16 03:53:49,881 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Evidence Validation Agent' resolving profile for target: EGFR L858R
+2026-06-16 03:53:49,882 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'EGFR' (EGFR L858R)
+2026-06-16 03:53:49,882 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Consensus Agent' resolving profile for target: EGFR L858R
+2026-06-16 03:53:49,882 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 03:53:49,883 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 03:53:49,883 [INFO] BioReason-X: Building default biomedical graph...
+2026-06-16 03:53:49,883 [ERROR] BioReason-X: Error injecting results into knowledge graph: networkx.classes.digraph.DiGraph.add_node() got multiple values for keyword argument 'label'
+2026-06-16 03:54:05,558 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 03:54:05,559 [INFO] BioReason-X: Building default biomedical graph...
+2026-06-16 03:55:07,860 [INFO] BioReason-X: Triggering analysis for HGVS from Home view.
+2026-06-16 03:55:07,860 [INFO] BioReason-X: Triggering BioReason-X pipeline for mutation: 'HGVS'
+2026-06-16 03:55:07,861 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 03:55:07,883 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'HGVS'
+2026-06-16 03:55:07,884 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Mutation Analysis Agent' resolving profile for target: HGVS
+2026-06-16 03:55:07,885 [INFO] BioReason-X: Running Gene & Protein Agent for: 'HGVS' (Missense Variant (p.Xxx123Yyy))
+2026-06-16 03:55:07,885 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Gene & Protein Agent' resolving profile for target: HGVS
+2026-06-16 03:55:07,886 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'HGVS'
+2026-06-16 03:55:07,887 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Pathway Analysis Agent' resolving profile for target: HGVS
+2026-06-16 03:55:07,887 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'HGVS'
+2026-06-16 03:55:07,888 [INFO] BioReason-X: Executing RAG retrieval for: 'HGVS'
+2026-06-16 03:55:07,913 [INFO] BioReason-X: Executing RAG retrieval for: 'HGVS mutation clinical significance'
+2026-06-16 03:55:07,926 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 03:55:07,927 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'HGVS'
+2026-06-16 03:55:07,927 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Therapy Recommendation Agent' resolving profile for target: HGVS
+2026-06-16 03:55:07,928 [INFO] BioReason-X: Running Evidence Validation Agent for: 'HGVS' (HGVS)
+2026-06-16 03:55:07,929 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Evidence Validation Agent' resolving profile for target: HGVS
+2026-06-16 03:55:07,929 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'HGVS' (HGVS)
+2026-06-16 03:55:07,930 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Consensus Agent' resolving profile for target: HGVS
+2026-06-16 03:55:07,930 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 03:55:07,931 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 03:55:07,932 [INFO] BioReason-X: Building default biomedical graph...
+2026-06-16 03:55:07,932 [ERROR] BioReason-X: Error injecting results into knowledge graph: networkx.classes.digraph.DiGraph.add_node() got multiple values for keyword argument 'label'
+2026-06-16 03:55:21,562 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 03:55:21,562 [INFO] BioReason-X: Building default biomedical graph...
+2026-06-16 03:56:59,035 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 03:56:59,036 [INFO] BioReason-X: Building default biomedical graph...
+2026-06-16 03:56:59,038 [INFO] BioReason-X: Saved NetworkX graph to cache.
+2026-06-16 03:57:31,367 [INFO] BioReason-X: Triggering analysis for HGVS from Home view.
+2026-06-16 03:57:31,367 [INFO] BioReason-X: Triggering BioReason-X pipeline for mutation: 'HGVS'
+2026-06-16 03:57:31,368 [INFO] BioReason-X: Assembling LangGraph Multi-Agent state workflow.
+2026-06-16 03:57:31,388 [INFO] BioReason-X: Running Mutation Analysis Agent for: 'HGVS'
+2026-06-16 03:57:31,389 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Mutation Analysis Agent' resolving profile for target: HGVS
+2026-06-16 03:57:31,389 [INFO] BioReason-X: Running Gene & Protein Agent for: 'HGVS' (Missense Variant (p.Xxx123Yyy))
+2026-06-16 03:57:31,390 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Gene & Protein Agent' resolving profile for target: HGVS
+2026-06-16 03:57:31,391 [INFO] BioReason-X: Running Pathway Analysis Agent for: 'HGVS'
+2026-06-16 03:57:31,391 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Pathway Analysis Agent' resolving profile for target: HGVS
+2026-06-16 03:57:31,391 [INFO] BioReason-X: Running Literature Intelligence Agent for query: 'HGVS'
+2026-06-16 03:57:31,392 [INFO] BioReason-X: Executing RAG retrieval for: 'HGVS'
+2026-06-16 03:57:31,416 [INFO] BioReason-X: Executing RAG retrieval for: 'HGVS mutation clinical significance'
+2026-06-16 03:57:31,429 [INFO] BioReason-X: Retrieved 3 unique literature references via RAG.
+2026-06-16 03:57:31,430 [INFO] BioReason-X: Running Therapy Recommendation Agent for: 'HGVS'
+2026-06-16 03:57:31,431 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Therapy Recommendation Agent' resolving profile for target: HGVS
+2026-06-16 03:57:31,432 [INFO] BioReason-X: Running Evidence Validation Agent for: 'HGVS' (HGVS)
+2026-06-16 03:57:31,432 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Evidence Validation Agent' resolving profile for target: HGVS
+2026-06-16 03:57:31,433 [INFO] BioReason-X: Running Consensus Agent to compile report for: 'HGVS' (HGVS)
+2026-06-16 03:57:31,434 [INFO] BioReason-X: [SIMULATION MODE] Agent 'Consensus Agent' resolving profile for target: HGVS
+2026-06-16 03:57:31,434 [INFO] BioReason-X: Injecting agentic reasoning outputs into the Biomedical Knowledge Graph.
+2026-06-16 03:57:31,435 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 03:57:31,436 [INFO] BioReason-X: Loaded cached NetworkX graph with 20 nodes.
+2026-06-16 03:57:31,436 [ERROR] BioReason-X: Error injecting results into knowledge graph: networkx.classes.digraph.DiGraph.add_node() got multiple values for keyword argument 'label'
+2026-06-16 03:57:46,117 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
+2026-06-16 03:57:46,119 [INFO] BioReason-X: Loaded cached NetworkX graph with 20 nodes.
