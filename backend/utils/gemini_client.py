@@ -1,7 +1,16 @@
 import json
 import re
+import urllib.request
+import urllib.error
 from typing import Dict, Any, List
-from backend.utils.config import GEMINI_API_KEY, GEMINI_MODEL_FLASH, logger
+from backend.utils.config import (
+    GEMINI_API_KEY,
+    GEMINI_MODEL_FLASH,
+    logger,
+    USE_LOCAL_LLM,
+    LOCAL_LLM_API_BASE,
+    LOCAL_LLM_MODEL
+)
 
 # Configure google-generativeai if API key is present
 HAS_GEMINI = False
@@ -228,6 +237,47 @@ MOCK_PROFILES = {
     }
 }
 
+def generate_local_llm_content(prompt: str, system_instruction: str = None, json_mode: bool = False) -> str:
+    """Queries the local OpenAI-compatible API endpoint (like vLLM or Ollama)."""
+    url = f"{LOCAL_LLM_API_BASE.rstrip('/')}/chat/completions"
+    
+    messages = []
+    if system_instruction:
+        messages.append({"role": "system", "content": system_instruction})
+    messages.append({"role": "user", "content": prompt})
+    
+    payload = {
+        "model": LOCAL_LLM_MODEL,
+        "messages": messages,
+        "temperature": 0.1,
+    }
+    
+    if json_mode:
+        payload["response_format"] = {"type": "json_object"}
+        
+    headers = {
+        "Content-Type": "application/json"
+    }
+    
+    req = urllib.request.Request(
+        url,
+        data=json.dumps(payload).encode("utf-8"),
+        headers=headers,
+        method="POST"
+    )
+    
+    try:
+        with urllib.request.urlopen(req, timeout=60) as response:
+            res_data = response.read().decode("utf-8")
+            res_json = json.loads(res_data)
+            return res_json["choices"][0]["message"]["content"]
+    except urllib.error.URLError as e:
+        logger.error(f"Failed to connect to local LLM at {url}: {e}")
+        raise e
+    except Exception as e:
+        logger.error(f"Error querying local LLM: {e}")
+        raise e
+
 def generate_gemini_content(prompt: str, system_instruction: str = None, json_mode: bool = False) -> str:
     """Wrapper calling the Gemini model or returning a message if error occurs."""
     if not HAS_GEMINI:
@@ -254,8 +304,8 @@ def generate_gemini_content(prompt: str, system_instruction: str = None, json_mo
         raise e
 
 def query_gemini_agent(agent_name: str, mutation_input: str, system_prompt: str, user_prompt: str, json_mode: bool = False) -> str:
-    """Invokes the live Gemini model or resolves to simulation templates if unavailable or error occurs."""
-    # Normalized search key for simulation profiles
+    """Invokes the local LLM first, falling back to Gemini API, and finally to simulation templates if both fail."""
+    # Normalized search key for simulation profiles (used as final fallback)
     lookup_key = None
     for key in MOCK_PROFILES.keys():
         if key.lower() in mutation_input.lower():
@@ -271,17 +321,27 @@ def query_gemini_agent(agent_name: str, mutation_input: str, system_prompt: str,
         elif "braf" in mutation_input.lower():
             lookup_key = "BRAF V600E"
 
-    if not HAS_GEMINI:
-        logger.info(f"[SIMULATION MODE] Agent '{agent_name}' resolving profile for target: {mutation_input}")
-        return fetch_simulated_result(agent_name, lookup_key, mutation_input, json_mode)
+    # 1. Attempt Local LLM First (if configured)
+    if USE_LOCAL_LLM:
+        try:
+            logger.info(f"[LOCAL LLM MODE] Querying local model for agent '{agent_name}' with: {mutation_input}")
+            return generate_local_llm_content(user_prompt, system_instruction=system_prompt, json_mode=json_mode)
+        except Exception as e:
+            logger.warning(f"Local LLM query failed for '{agent_name}'. Falling back to Gemini: {e}")
+            # Fall through to Gemini
 
-    try:
-        # Attempt calling live API
-        logger.info(f"[LIVE API MODE] Querying Gemini model for agent '{agent_name}' with: {mutation_input}")
-        return generate_gemini_content(user_prompt, system_instruction=system_prompt, json_mode=json_mode)
-    except Exception as e:
-        logger.warning(f"Live Gemini API failed for '{agent_name}'. Falling back to simulation profile: {e}")
-        return fetch_simulated_result(agent_name, lookup_key, mutation_input, json_mode)
+    # 2. Attempt Live Gemini API (if available)
+    if HAS_GEMINI:
+        try:
+            logger.info(f"[LIVE API MODE] Querying Gemini model for agent '{agent_name}' with: {mutation_input}")
+            return generate_gemini_content(user_prompt, system_instruction=system_prompt, json_mode=json_mode)
+        except Exception as e:
+            logger.warning(f"Live Gemini API failed for '{agent_name}'. Falling back to simulation profile: {e}")
+            # Fall through to simulation mode
+
+    # 3. Final Fallback: Clinical Simulation Mode
+    logger.info(f"[SIMULATION MODE] Agent '{agent_name}' resolving profile for target: {mutation_input}")
+    return fetch_simulated_result(agent_name, lookup_key, mutation_input, json_mode)
 
 def fetch_simulated_result(agent_name: str, lookup_key: str, raw_input: str, json_mode: bool) -> str:
     """Returns simulated response contents based on pre-defined clinical profiles."""
