@@ -60,12 +60,26 @@ The analysis follows a sequential clinical path assembled in a LangGraph StateGr
 
 ## 🛠️ Setup Instructions
 
-### 1. Prerequisites
+### 0. Prerequisites
 - Python 3.9, 3.10, or 3.11 installed.
+
+### 1. Run models
+```bash
+# run ollama
+nohup ollama serve > ollama.log 2>&1 &
+
+# verfify it running
+cat ollama.log 
+
+# run model
+ollama run deepseek-r1:32b
+```
 
 ### 2. Installation
 Clone or navigate to the workspace directory and install requirements:
 ```bash
+python -m venv .venv
+source .venv/bin/activate 
 pip install -r requirements.txt
 ```
 
@@ -92,6 +106,8 @@ NEO4J_PASSWORD=myPassword
 
 Start the Streamlit application:
 ```bash
+streamlit run app.py --server.port 8501 --server.headless true  --server.enableCORS false --server.enableXsrfProtection false --server.fileWatcherType poll
+
 streamlit run app.py
 ```
 This opens the browser automatically at `http://localhost:8501`.
