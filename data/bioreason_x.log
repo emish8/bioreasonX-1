@@ -5217,3 +5217,9 @@ Please retry in 31.633864416s. [links {
 2026-06-17 13:45:37,711 [INFO] BioReason-X: Loaded cached NetworkX graph with 40 nodes.
 2026-06-17 13:47:59,268 [INFO] BioReason-X: Using NetworkX in-memory graph engine.
 2026-06-17 13:47:59,269 [INFO] BioReason-X: Loaded cached NetworkX graph with 40 nodes.
+2026-06-17 17:08:53,544 [INFO] BioReason-X: Gemini API configured successfully.
+2026-06-17 17:09:30,781 [INFO] faiss.loader: Loading faiss with AVX2 support.
+2026-06-17 17:09:30,781 [INFO] faiss.loader: Could not load library with AVX2 support due to:
+ModuleNotFoundError("No module named 'faiss.swigfaiss_avx2'")
+2026-06-17 17:09:30,782 [INFO] faiss.loader: Loading faiss.
+2026-06-17 17:09:30,816 [INFO] faiss.loader: Successfully loaded faiss.

@@ -54,7 +54,7 @@ BioReason-X/
 │   │   └── retriever.py       # FAISS database / NumPy Cosine similarity engine
 │   └── utils/
 │       ├── config.py          # Environment settings, logger, path config
-│       ├── gemini_client.py   # Gemini API connector with backup mock templates
+│       ├── llm_client.py      # LLM client (Gemini & Local LLM) with simulated fallback profiles
 │       ├── pdf_generator.py   # ReportLab PDF clinical generator
 │       └── doc_generator.py   # Word (docx) report exporter
 └── frontend/

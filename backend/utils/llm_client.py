@@ -318,7 +318,7 @@ def generate_gemini_content(prompt: str, system_instruction: str = None, json_mo
         logger.error(f"Gemini API generation failed: {e}")
         raise e
 
-def query_gemini_agent(agent_name: str, mutation_input: str, system_prompt: str, user_prompt: str, json_mode: bool = False) -> str:
+def query_llm_agent(agent_name: str, mutation_input: str, system_prompt: str, user_prompt: str, json_mode: bool = False) -> str:
     """Invokes the local LLM first, falling back to Gemini API, and finally to simulation templates if both fail."""
     # Normalized search key for simulation profiles (used as final fallback)
     lookup_key = None

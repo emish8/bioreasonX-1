@@ -26,7 +26,7 @@ GEMINI_MODEL_PRO = "gemini-2.5-pro"
 GEMINI_MODEL_FLASH = "gemini-2.5-flash"
 
 # Local LLM configuration
-USE_LOCAL_LLM = os.getenv("USE_LOCAL_LLM", "false").lower() == "true"
+USE_LOCAL_LLM = os.getenv("USE_LOCAL_LLM", "true").lower() == "true"
 LOCAL_LLM_API_BASE = os.getenv("LOCAL_LLM_API_BASE", "http://localhost:8000/v1")
 LOCAL_LLM_MODEL = os.getenv("LOCAL_LLM_MODEL", "deepseek-r1-distill-qwen-32b-awq")
 

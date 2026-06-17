@@ -1,6 +1,6 @@
 import json
 from backend.agents.state import AgentState
-from backend.utils.gemini_client import query_gemini_agent
+from backend.utils.llm_client import query_llm_agent
 from backend.utils.config import logger
 
 def run_pathway_agent(state: AgentState) -> AgentState:
@@ -24,7 +24,7 @@ def run_pathway_agent(state: AgentState) -> AgentState:
     )
 
     try:
-        response_text = query_gemini_agent(
+        response_text = query_llm_agent(
             agent_name="Pathway Analysis Agent",
             mutation_input=mutation_input,
             system_prompt=system_prompt,
