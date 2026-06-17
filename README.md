@@ -129,7 +129,7 @@ nohup python -m vllm.entrypoints.openai.api_server \
   --host 127.0.0.1 \
   --max-model-len 4096 \
   --enable-prefix-caching \
-  --trust-remote-code ----dtype float16> vllm.log 2>&1 &
+  --trust-remote-code --dtype float16> vllm.log 2>&1 &
 
 nohup python -m vllm.entrypoints.openai.api_server \
   --model casperhansen/deepseek-r1-distill-qwen-32b-awq \
