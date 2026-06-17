@@ -33,7 +33,65 @@ def render_explainable_ai():
         from agent outputs and RAG ingestion in the visual knowledge graph below.
         """
     )
+    # Guided Tour Expander for non-experts
+    is_expanded = True
+    with st.expander("📖 Guide: How to Read the Reasoning Graph", expanded=is_expanded):
+        st.write(
+            "The reasoning graph acts like a **detective map**. It connects a genomic mutation "
+            "all the way to its downstream cellular disruption, clinical disease, and the targeted drug that can treat it."
+        )
+        
+        st.markdown("### 1. Core Biological Flow")
+        # Visual representation using emojis
+        st.info(
+            "🧬 **Mutation** &nbsp;➡️&nbsp; 🧬 **Gene** &nbsp;➡️&nbsp; 🔬 **Protein** &nbsp;➡️&nbsp; 🔄 **Pathway** &nbsp;➡️&nbsp; 🏥 **Disease**"
+        )
+        
+        col1, col2 = st.columns(2)
+        with col1:
+            with st.container(border=True):
+                st.markdown("**🧬 Mutation &rarr; Gene &rarr; Protein**")
+                st.markdown(
+                    "- **Mutation**: The specific genomic change query (e.g. *EGFR L858R*).\n"
+                    "- **Gene**: The gene structure containing the mutation (e.g. *EGFR*).\n"
+                    "- **Protein**: The active molecule whose shape/function is altered by the mutation."
+                )
+        with col2:
+            with st.container(border=True):
+                st.markdown("**🔄 Pathway &rarr; 🏥 Disease**")
+                st.markdown(
+                    "- **Pathway**: The cell signaling cascade triggered to abnormal levels (e.g. *PI3K-Akt signaling*).\n"
+                    "- **Disease**: The cancer or clinical condition linked to this pathway disruption."
+                )
 
+        st.markdown("### 2. Therapeutic Strategy & Support")
+        col3, col4 = st.columns(2)
+        with col3:
+            with st.container(border=True):
+                st.markdown("#### 💊 Drug")
+                st.markdown(
+                    "**Targets the Protein**: A targeted inhibitor (e.g. *Osimertinib*) designed to "
+                    "bind to and block the overactive mutated protein."
+                )
+        with col4:
+            with st.container(border=True):
+                st.markdown("#### 📄 Publication")
+                st.markdown(
+                    "**Supports the Drug**: Scientific references (e.g. *PMID-26565053*) "
+                    "validating the clinical efficacy of this drug."
+                )
+
+        st.markdown("### 3. Relationship Link Mechanisms")
+        with st.container(border=True):
+            col_l1, col_l2 = st.columns(2)
+            with col_l1:
+                st.markdown("- **affects**: Mutation alters normal behavior of the gene.")
+                st.markdown("- **encodes**: The gene acts as instruction code to build the protein.")
+                st.markdown("- **participates_in**: Mutated protein alters signaling in this pathway cascade.")
+            with col_l2:
+                st.markdown("- **associated_with**: Signaling path deregulation is linked to this cancer/disease.")
+                st.markdown("- **targets**: Drug binds directly to the protein to shut down overactivity.")
+                st.markdown("- **supports**: Scientific literature validates the treatment guidelines.")
     if "pipeline_results" not in st.session_state:
         st.info("No active analysis. Please submit a mutation query on the Home page.")
         return
@@ -41,14 +99,29 @@ def render_explainable_ai():
     # Key Legend
     st.markdown(
         """
-        <div style="display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 20px; font-size: 0.9rem;">
-            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#ED8936; margin-right:5px;"></span>Mutation</div>
-            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#4299E1; margin-right:5px;"></span>Gene</div>
-            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#9F7AEA; margin-right:5px;"></span>Protein</div>
-            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#319795; margin-right:5px;"></span>Pathway</div>
-            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#E53E3E; margin-right:5px;"></span>Disease</div>
-            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#48BB78; margin-right:5px;"></span>Drug</div>
-            <div><span style="display:inline-block; width:12px; height:12px; border-radius:50%; background-color:#ECC94B; margin-right:5px;"></span>Publication</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 25px; padding: 12px 16px; background: rgba(128, 128, 128, 0.03); border: 1px solid rgba(128, 128, 128, 0.08); border-radius: 10px;">
+            <div style="font-size: 0.8rem; font-weight: 600; color: #64748B; align-self: center; margin-right: 5px; text-transform: uppercase; letter-spacing: 0.5px;">Reasoning Entities:</div>
+            <div style="display: flex; align-items: center; background: rgba(237, 137, 54, 0.08); color: #ED8936; border: 1px solid rgba(237, 137, 54, 0.15); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#ED8936; margin-right:6px;"></span>Mutation
+            </div>
+            <div style="display: flex; align-items: center; background: rgba(66, 153, 225, 0.08); color: #4299E1; border: 1px solid rgba(66, 153, 225, 0.15); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#4299E1; margin-right:6px;"></span>Gene
+            </div>
+            <div style="display: flex; align-items: center; background: rgba(159, 122, 234, 0.08); color: #9F7AEA; border: 1px solid rgba(159, 122, 234, 0.15); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#9F7AEA; margin-right:6px;"></span>Protein
+            </div>
+            <div style="display: flex; align-items: center; background: rgba(49, 151, 149, 0.08); color: #319795; border: 1px solid rgba(49, 151, 149, 0.15); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#319795; margin-right:6px;"></span>Pathway
+            </div>
+            <div style="display: flex; align-items: center; background: rgba(229, 62, 62, 0.08); color: #E53E3E; border: 1px solid rgba(229, 62, 62, 0.15); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#E53E3E; margin-right:6px;"></span>Disease
+            </div>
+            <div style="display: flex; align-items: center; background: rgba(72, 187, 120, 0.08); color: #48BB78; border: 1px solid rgba(72, 187, 120, 0.15); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#48BB78; margin-right:6px;"></span>Drug
+            </div>
+            <div style="display: flex; align-items: center; background: rgba(236, 201, 75, 0.08); color: #B7791F; border: 1px solid rgba(236, 201, 75, 0.15); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+                <span style="display:inline-block; width:8px; height:8px; border-radius:50%; background-color:#ECC94B; margin-right:6px;"></span>Publication
+            </div>
         </div>
         """,
         unsafe_allow_html=True
@@ -191,11 +264,37 @@ def render_explainable_ai():
 
 def render_fallback_lists(nodes, edges):
     """Fallback representation for when Pyvis visual library is missing or fails."""
-    st.markdown("### Nodes (Biological Entities)")
-    import pandas as pd
-    df_nodes = pd.DataFrame(nodes)
-    st.dataframe(df_nodes[["id", "category"]], use_container_width=True)
-    
-    st.markdown("### Directed Edges (Mechanisms)")
-    df_edges = pd.DataFrame(edges)
-    st.dataframe(df_edges, use_container_width=True)
+    st.markdown("### 🧬 Nodes (Biological Entities)")
+    if nodes:
+        node_cards = ""
+        for node in nodes:
+            label = node.get("label", "N/A")
+            cat = node.get("category", "N/A")
+            color = CATEGORY_COLORS.get(cat, "#A0AEC0")
+            node_cards += f"""
+            <div style="background: rgba(128, 128, 128, 0.04); border: 1px solid rgba(128, 128, 128, 0.1); border-left: 4px solid {color}; border-radius: 8px; padding: 10px 14px; margin-bottom: 8px; display: inline-block; margin-right: 8px; min-width: 150px;">
+                <div style="font-size: 0.72rem; color: #64748B; text-transform: uppercase; font-weight: 600;">{cat}</div>
+                <div style="font-weight: 700; color: var(--text-color); margin-top: 2px; font-size: 0.95rem;">{label}</div>
+            </div>
+            """
+        st.markdown(f"<div style='margin-bottom: 25px;'>{node_cards}</div>", unsafe_allow_html=True)
+    else:
+        st.write("No nodes in the reasoning graph.")
+
+    st.markdown("### 🔗 Directed Edges (Mechanisms)")
+    if edges:
+        edge_items = ""
+        for edge in edges:
+            frm = edge.get("from", "N/A")
+            to = edge.get("to", "N/A")
+            label = edge.get("label", "N/A")
+            edge_items += f"""
+            <div style="background: rgba(128, 128, 128, 0.02); border: 1px solid rgba(128, 128, 128, 0.08); border-radius: 8px; padding: 12px 16px; margin-bottom: 8px; display: flex; align-items: center; justify-content: space-between; gap: 10px; max-width: 600px;">
+                <span style="font-weight: 600; color: #1e3a8a;">{frm}</span>
+                <span style="color: #0d9488; font-weight: 700; font-size: 0.85rem; background: rgba(13, 148, 136, 0.08); padding: 4px 12px; border-radius: 20px;">{label} &rarr;</span>
+                <span style="font-weight: 600; color: #1e3a8a;">{to}</span>
+            </div>
+            """
+        st.markdown(edge_items, unsafe_allow_html=True)
+    else:
+        st.write("No edges in the reasoning graph.")

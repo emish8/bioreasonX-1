@@ -34,6 +34,66 @@ def render_knowledge_graph():
         """
     )
 
+    # Guided Tour Expander for non-experts
+    is_expanded = True
+    with st.expander("📖 Guide: How to Read the Reasoning Graph (For Non-Experts)", expanded=is_expanded):
+        st.write(
+            "The reasoning graph acts like a **detective map**. It connects a genomic mutation "
+            "all the way to its downstream cellular disruption, clinical disease, and the targeted drug that can treat it."
+        )
+        
+        st.markdown("### 1. Core Biological Flow")
+        # Visual representation using emojis
+        st.info(
+            "🧬 **Mutation** &nbsp;➡️&nbsp; 🧬 **Gene** &nbsp;➡️&nbsp; 🔬 **Protein** &nbsp;➡️&nbsp; 🔄 **Pathway** &nbsp;➡️&nbsp; 🏥 **Disease**"
+        )
+        
+        col1, col2 = st.columns(2)
+        with col1:
+            with st.container(border=True):
+                st.markdown("**🧬 Mutation &rarr; Gene &rarr; Protein**")
+                st.markdown(
+                    "- **Mutation**: The specific genomic change query (e.g. *EGFR L858R*).\n"
+                    "- **Gene**: The gene structure containing the mutation (e.g. *EGFR*).\n"
+                    "- **Protein**: The active molecule whose shape/function is altered by the mutation."
+                )
+        with col2:
+            with st.container(border=True):
+                st.markdown("**🔄 Pathway &rarr; 🏥 Disease**")
+                st.markdown(
+                    "- **Pathway**: The cell signaling cascade triggered to abnormal levels (e.g. *PI3K-Akt signaling*).\n"
+                    "- **Disease**: The cancer or clinical condition linked to this pathway disruption."
+                )
+
+        st.markdown("### 2. Therapeutic Strategy & Support")
+        col3, col4 = st.columns(2)
+        with col3:
+            with st.container(border=True):
+                st.markdown("#### 💊 Drug")
+                st.markdown(
+                    "**Targets the Protein**: A targeted inhibitor (e.g. *Osimertinib*) designed to "
+                    "bind to and block the overactive mutated protein."
+                )
+        with col4:
+            with st.container(border=True):
+                st.markdown("#### 📄 Publication")
+                st.markdown(
+                    "**Supports the Drug**: Scientific references (e.g. *PMID-26565053*) "
+                    "validating the clinical efficacy of this drug."
+                )
+
+        st.markdown("### 3. Relationship Link Mechanisms")
+        with st.container(border=True):
+            col_l1, col_l2 = st.columns(2)
+            with col_l1:
+                st.markdown("- **affects**: Mutation alters normal behavior of the gene.")
+                st.markdown("- **encodes**: The gene acts as instruction code to build the protein.")
+                st.markdown("- **participates_in**: Mutated protein alters signaling in this pathway cascade.")
+            with col_l2:
+                st.markdown("- **associated_with**: Signaling path deregulation is linked to this cancer/disease.")
+                st.markdown("- **targets**: Drug binds directly to the protein to shut down overactivity.")
+                st.markdown("- **supports**: Scientific literature validates the treatment guidelines.")
+
     # Key Legend
     st.markdown(
         """

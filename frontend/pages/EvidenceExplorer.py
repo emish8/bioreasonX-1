@@ -57,6 +57,9 @@ def render_evidence_explorer():
         else:
             id_html = f'<span class="badge badge-id">{doc_id}</span>'
 
+        # Progress bar fill calculation
+        score_pct = min(max(int(score * 100), 0), 100)
+
         # Style box matching clinical aesthetics
         st.markdown(
             f"""
@@ -67,7 +70,7 @@ def render_evidence_explorer():
                         Source: {source} ({category})
                     </span>
                     <span class="badge badge-relevance">
-                        Relevance: {score:.2f}
+                        Match Index: {score:.2f}
                     </span>
                 </div>
                 <h4 class="evidence-title">
@@ -76,6 +79,13 @@ def render_evidence_explorer():
                 <p class="evidence-abstract">
                     "{abstract}"
                 </p>
+                <div style="margin-top: 15px; display: flex; align-items: center; gap: 12px; background: rgba(128, 128, 128, 0.02); padding: 8px 14px; border-radius: 8px; border: 1px solid rgba(128, 128, 128, 0.05);">
+                    <span style="font-size: 0.8rem; font-weight: 600; color: #64748B; min-width: 90px; text-transform: uppercase; letter-spacing: 0.5px;">Match Affinity</span>
+                    <div class="relevance-bar-container" style="flex-grow: 1; margin-top: 0; background-color: rgba(128, 128, 128, 0.1);">
+                        <div class="relevance-bar-fill" style="width: {score_pct}%; background: linear-gradient(90deg, #1e3a8a, #0d9488);"></div>
+                    </div>
+                    <span style="font-size: 0.85rem; font-weight: 700; color: #0d9488; min-width: 35px; text-align: right;">{score_pct}%</span>
+                </div>
             </div>
             """,
             unsafe_allow_html=True

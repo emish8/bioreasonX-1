@@ -1,20 +1,98 @@
 import streamlit as st
+import textwrap
 from backend.agents.workflow import run_bioreason_pipeline, stream_bioreason_pipeline
 from backend.utils.config import logger
 
 def render_home():
-    # Hero Title with gradient style using HTML/CSS
+    # Hero Title with premium glowing gradient and background panel
     st.markdown(
-        """
-        <div style="text-align: center; padding: 20px 0px 40px 0px;">
-            <h1 style="font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 3.2rem; margin: 0; background: linear-gradient(135deg, #1A365D, #319795); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
-                BioReason-X
-            </h1>
-            <p class="hero-subtitle">
-                Mutation &rarr; Mechanism &rarr; Therapy Intelligence Platform
+        textwrap.dedent("""
+        <div style="background: linear-gradient(135deg, rgba(30, 58, 138, 0.95), rgba(13, 148, 136, 0.95)); border-radius: 16px; padding: 40px 20px; text-align: center; margin-bottom: 30px; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05); color: #ffffff;">
+            <div style="font-size: 3.5rem; font-weight: 800; font-family: 'Outfit', sans-serif; letter-spacing: -1.5px; margin: 0; line-height: 1;">
+                BioReason<span style="font-weight: 300;">-X</span>
+            </div>
+            <p style="font-size: 1.25rem; font-weight: 400; opacity: 0.9; margin-top: 15px; margin-bottom: 0; font-family: 'Inter', sans-serif; letter-spacing: 0.5px;">
+                Mutation &rarr; Mechanism &rarr; Therapy Decision Intelligence
             </p>
         </div>
-        """,
+        
+        <style>
+            /* Custom Search Box & Inputs styling */
+            div[data-testid="stTextInput"] input {
+                background-color: var(--secondary-background-color) !important;
+                border: 2px solid var(--border-color, rgba(128, 128, 128, 0.2)) !important;
+                border-radius: 12px !important;
+                padding: 14px 18px !important;
+                font-size: 1.1rem !important;
+                color: var(--text-color) !important;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.01) !important;
+                transition: all 0.25s ease !important;
+            }
+            div[data-testid="stTextInput"] input:focus {
+                border-color: #0d9488 !important;
+                box-shadow: 0 0 0 3px rgba(13, 148, 136, 0.15) !important;
+            }
+            
+            /* Styled template buttons as tags/chips */
+            div[data-testid="column"] button {
+                background-color: rgba(128, 128, 128, 0.05) !important;
+                color: var(--text-color) !important;
+                border: 1px solid rgba(128, 128, 128, 0.15) !important;
+                border-radius: 30px !important;
+                padding: 6px 12px !important;
+                font-size: 0.85rem !important;
+                font-weight: 600 !important;
+                transition: all 0.25s ease !important;
+            }
+            div[data-testid="column"] button:hover {
+                background-color: rgba(13, 148, 136, 0.1) !important;
+                color: #0d9488 !important;
+                border-color: rgba(13, 148, 136, 0.3) !important;
+                transform: translateY(-1px) !important;
+            }
+            
+            /* Custom step cards */
+            .step-card {
+                background: var(--secondary-background-color);
+                border: 1px solid var(--border-color, rgba(128, 128, 128, 0.15));
+                border-radius: 10px;
+                padding: 14px 18px;
+                margin-bottom: 12px;
+                display: flex;
+                align-items: flex-start;
+                gap: 14px;
+                transition: all 0.25s ease;
+            }
+            .step-card:hover {
+                border-color: rgba(13, 148, 136, 0.25);
+                transform: translateX(4px);
+                box-shadow: 0 4px 15px rgba(0, 0, 0, 0.02);
+            }
+            .step-num {
+                background: linear-gradient(135deg, #1e3a8a, #0d9488);
+                color: #ffffff;
+                width: 28px;
+                height: 28px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-weight: 700;
+                font-size: 0.85rem;
+                flex-shrink: 0;
+            }
+            .step-title {
+                font-weight: 600;
+                color: var(--text-color);
+                margin-bottom: 2px;
+            }
+            .step-desc {
+                font-size: 0.88rem;
+                color: var(--text-color);
+                opacity: 0.8;
+            }
+        </style>
+        """),
         unsafe_allow_html=True
     )
 
@@ -24,11 +102,14 @@ def render_home():
     with col1:
         # Form box styled with glassmorphism border
         st.markdown(
-            """
-            <div class="analysis-card">
-                <h4>Analyze Genomic Variant</h4>
+            textwrap.dedent("""
+            <div class="glass-card">
+                <h4>🧬 Analyze Genomic Variant</h4>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: -5px; margin-bottom: 15px;">
+                    Input a target mutation or pick a clinical case study template below to run the multi-agent reasoning graph.
+                </p>
             </div>
-            """, 
+            """), 
             unsafe_allow_html=True
         )
 
@@ -37,8 +118,11 @@ def render_home():
             "Enter genomic mutation query (e.g. HGVS or amino acid variant):",
             value=st.session_state.get("mutation_query", ""),
             placeholder="e.g. BRCA1 c.5266dupC",
-            key="main_input"
+            key="main_input",
+            label_visibility="collapsed"
         )
+        
+        st.markdown("<div style='height:12px;'></div>", unsafe_allow_html=True)
         
         # Placeholder for the status view
         status_placeholder = st.empty()
@@ -46,7 +130,7 @@ def render_home():
         # Action button
         run_analysis = st.button("🚀 Analyze Mutation", use_container_width=True)
 
-        st.markdown("---")
+        st.markdown("<hr style='margin: 25px 0 20px 0; opacity: 0.15;'/>", unsafe_allow_html=True)
         
         # Predefined examples
         st.write("📋 **Select a clinical template:**")
@@ -77,17 +161,30 @@ def render_home():
         )
 
         st.markdown("#### 🛠️ Analysis Core Steps")
+        
         steps = [
-            "**1. Mutation Interpretation**: Identifies mutation structure & pathogenicity.",
-            "**2. Gene & Protein Mapping**: Maps spatial domain disruptions & active kinase sites.",
-            "**3. Pathway Disruption Analysis**: Traces cellular signal cascade consequences.",
-            "**4. Literature RAG Matching**: Performs deep search against clinical registries & abstracts.",
-            "**5. Targeted Therapy Prescriptions**: Recommends FDA approved & off-label targeted drugs.",
-            "**6. Evidence Validation & Auditing**: Screens conclusions for inconsistencies & clinical proof.",
-            "**7. Consensus Synthesis**: Blends findings into a unified clinical brief."
+            ("1", "Mutation Interpretation", "Identifies mutation structure, type, and pathogenicity classification."),
+            ("2", "Gene & Protein Mapping", "Maps spatial protein domains, active binding residues, and kinase sites."),
+            ("3", "Pathway Disruption Analysis", "Traces cascade consequences on cellular networks and downstream cascades."),
+            ("4", "Literature RAG Matching", "Performs semantic vector searches against clinical registries & medical publications."),
+            ("5", "Targeted Therapy Guidelines", "Recommends FDA approved & off-label targeted drugs and synthetic lethal options."),
+            ("6", "Validation & Clinical Auditing", "Screens findings for clinical proof, logical inconsistencies, and contradictions."),
+            ("7", "Consensus Clinical Brief", "Synthesizes multi-agent findings into a certified diagnostic summary.")
         ]
-        for step in steps:
-            st.markdown(step)
+        
+        for num, title, desc in steps:
+            st.markdown(
+                textwrap.dedent(f"""
+                <div class="step-card">
+                    <div class="step-num">{num}</div>
+                    <div>
+                        <div class="step-title">{title}</div>
+                        <div class="step-desc">{desc}</div>
+                    </div>
+                </div>
+                """),
+                unsafe_allow_html=True
+            )
 
     # Trigger logic
     if run_analysis or (st.session_state.get("mutation_query") and "pipeline_results" not in st.session_state):
