@@ -366,7 +366,8 @@ def main():
     selection = st.sidebar.radio(
         "Navigation Menu:",
         options=nav_options,
-        index=nav_options.index(st.session_state["active_page"])
+        index=nav_options.index(st.session_state["active_page"]),
+        key="navigation_menu_radio"
     )
     
     st.session_state["active_page"] = selection
